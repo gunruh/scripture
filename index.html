@@ -4,19 +4,25 @@
 
   <head>
     <title>Scripture</title>
+    <script type="text/javascript" src="service.js"></script>
   </head>
 
   <body>
-    
-    <div style="margin: 0; position: absolute; top: 30%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%)">
+
+    <div style="width: 33%; margin: 0 auto 0 33%;">
         
         <h1 style="text-align: center;">Scripture</h1>
         
         <search>
-            <form>
-                <input name="searchInput" placeholder="Enter key words">
+            <form onsubmit="searchBible(bibleIdEnglish, document.getElementById('searchInputBox').value, document.getElementById('resultDiv')); return false;">
+                <input style="width: 100%;" id="searchInputBox" name="searchInput" placeholder="Enter key words">
             </form>
         </search>
+
+        <div></br></div>
+
+        <div style="outline: 2px" id="resultDiv">
+        </div>
 
     </div>
 
