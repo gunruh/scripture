@@ -11,7 +11,7 @@ A basic HTML, CSS, and JavaScript project to assist with reading Scripture
 ## Usage
 
 - Navigate to https://scripture.api.bible and click "Get Started" to create an account and receive an API Key.
-- Inside `service.js`, paste your API Key into the first line in place of the "xxx".
+- Inside `index.js`, paste your API Key into the first line in place of the "xxx".
 ```js
 const apiKey = "xxx"; // Replace "xxx" with API Key
 ```
