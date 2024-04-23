@@ -21,7 +21,7 @@ const apiKey = "xxx"; // Replace "xxx" with API Key
 <form onsubmit="searchBible(bibleIdEnglish, ...
 ```
 
-## Learning Resources
+## Resources
 
 ### API
 
