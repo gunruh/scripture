@@ -8,7 +8,20 @@ A basic HTML, CSS, and JavaScript project to assist with reading Scripture
 - Internet browser
 - Integrated Development Environment (IDE) or Text Editor Software
 
-## LearningResources
+## Usage
+
+- Navigate to https://scripture.api.bible and click "Get Started" to create an account and receive an API Key.
+- Inside `service.js`, paste your API Key into the first line in place of the "xxx".
+```js
+const apiKey = "xxx"; // Replace "xxx" with API Key
+```
+- Open `index.html` using a web browser.
+- For Spanish Bible search, replace `bibleIdEnglish` with `bibleIdSpanish` inside `index.html`
+```html
+<form onsubmit="searchBible(bibleIdEnglish, ...
+```
+
+## Learning Resources
 
 ### API
 
