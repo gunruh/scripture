@@ -29,7 +29,7 @@ const apiKey = "xxx"; // Replace "xxx" with API Key
 
 ### Icon Download
 
-- [Magnifying Glass](https://fontawesome.com/icons/magnifying-glass?f=classic&s=solid&pc=%23898989)
+- [Magnifying Glass](https://fontawesome.com/icons/magnifying-glass?f=classic&s=solid&pc=%23d3d3d3)
 
 ### Tutorials
 
