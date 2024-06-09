@@ -28,17 +28,19 @@ function searchBible(bibleId, searchInputText, resultElement) {
       return response.json();
     })
     .then((data) => {
-      let responseHTML = "";
+      let responseHTML = `
+      <div class="result-item-header">
+        <h2>English</h2>
+      </div>`;
 
       for (verse of data.data.verses) {
         console.log(verse.reference);
         console.log(verse.text);
 
         responseHTML = responseHTML.concat(`
-        <div>
+        <div class="result-item">
             <div><b>${verse.reference}</b></div>
             <div>${verse.text}</div>
-            <div></br></div>
         </div>`);
       }
 

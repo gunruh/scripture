@@ -10,22 +10,16 @@
 
   <body>
 
-    <h1>Scripture</h1>
+    <h1>Bible Search</h1>
 
-    <div style="width: 33%; margin: 0 auto 0 33%;">
+      <search>
+          <form onsubmit="searchBible(bibleIdEnglish, document.getElementById('searchInputBox').value, document.getElementById('resultCard')); return false;">
+              <input id="searchInputBox" placeholder="Search the Bible...">
+          </form>
+      </search>
 
-        <search>
-            <form onsubmit="searchBible(bibleIdEnglish, document.getElementById('searchInputBox').value, document.getElementById('resultDiv')); return false;">
-                <input id="searchInputBox" name="searchInput" placeholder="Search the Bible...">
-            </form>
-        </search>
-
-        <div></br></div>
-
-        <div id="resultDiv">
-        </div>
-
-    </div>
+      <div id="resultCard">
+      </div>
 
   </body>
 

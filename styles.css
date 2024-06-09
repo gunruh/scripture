@@ -10,19 +10,51 @@ h1 {
     margin-bottom: 32px;                                    /* 32px margin space below element */   
 }
 
+search {
+    width: 352px;                                           /* Total width of <search> element */
+    margin: auto;                                           /* Centers the <search> element horizontally on the page. */
+}
+
 input {
     /* Search Input */
     background-color: white;                              /* Color of element */
     height: 48px;                                           /* Height of element */
-    width: 85%;                                           /* Width of element */
     font-size: 22px;                                        /* Font size in Search Input. */
     border-radius: 24px;                                    /* Rounded corner radius */
+    outline: none;
     border: none;                                           /* Borders on element */
+    padding-left: 56px;                                     /* This moves the entered text past the right of the magnifying glass. 16px of padding, 24px of icon, 16px more spacing. */
+    width: 296px;                                           /* Width of text input area. (352px total width - 56px left-padding = 296px) */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);          /* Shadow around the element. Adjusted 0px horizontally, 4px veritically, 8px blur, 25% opacity. */
 
     /* Magnifying Glass Icon. */
     background-image: url('./magnifying-glass-solid.svg');  /* This is the magnifying-glass-solid.svg image to use. */
     background-size: 24px;                                  /* This controls the size of the icon. */
     background-repeat: no-repeat;                           /* This makes the icon not repeat. */
     background-position: 16px 12px;                         /* This adjusts the position of the icon. 16px to the right. 12px down from top. */
-    padding-left: 56px;                                     /* This moves the entered text past the right of the magnifying glass. 16px of padding, 24px of icon, 16px more spacing. */
+}
+
+#resultCard {
+    margin-top: 32px;
+    width: 352px;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: white;
+    border-radius: 24px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);          /* Shadow around the element. Adjusted 0px horizontally, 4px veritically, 8px blur, 25% opacity. */
+}
+
+.result-item-header h2 {
+    margin: 0px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    text-align: center;
+}
+
+.result-item {
+    padding-top: 0px;                                       /* 0px padding above result-item elements */
+    padding-right: 16px;                                    /* 16px padding to the right of result-item elements */
+    padding-bottom: 16px;                                   /* 16px padding below  result-item elements */
+    padding-left: 16px;                                     /* 16px padding to the left of result-item elements */
 }
