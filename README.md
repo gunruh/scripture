@@ -27,6 +27,10 @@ const apiKey = "xxx"; // Replace "xxx" with API Key
 
 - [API.Bible - API for accessing Bible verses](https://scripture.api.bible/)
 
+### Icon Download
+
+- [Magnifying Glass](https://fontawesome.com/icons/magnifying-glass?f=classic&s=solid&pc=%23898989)
+
 ### Tutorials
 
 - [freecodecamp.org - (English) Learn HTML and CSS in Spanish – Course for Beginners](https://www.freecodecamp.org/news/learn-html-and-css-in-spanish-course-for-beginners/)

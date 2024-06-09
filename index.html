@@ -5,17 +5,18 @@
   <head>
     <title>Scripture</title>
     <script type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
 
+    <h1>Scripture</h1>
+
     <div style="width: 33%; margin: 0 auto 0 33%;">
-        
-        <h1 style="text-align: center;">Scripture</h1>
-        
+
         <search>
             <form onsubmit="searchBible(bibleIdEnglish, document.getElementById('searchInputBox').value, document.getElementById('resultDiv')); return false;">
-                <input style="width: 100%;" id="searchInputBox" name="searchInput" placeholder="Enter key words">
+                <input id="searchInputBox" name="searchInput" placeholder="Search the Bible...">
             </form>
         </search>
 

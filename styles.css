@@ -1,0 +1,28 @@
+body {
+    background-color: lightgrey;
+    font-family: Arial, Helvetica, sans-serif;              /* "Arial" font will be used. If unavailable, "Helvetica" will be used. If unavailable, a "sans-serif" font will be picked. */
+}
+
+h1 {
+    font-size: 96px;                                        /* Font Size of <h1> Header */
+    text-align: center;                                     /* Centered left and right */
+    margin-top: 160px;                                      /* 160px margin space above element */
+    margin-bottom: 32px;                                    /* 32px margin space below element */   
+}
+
+input {
+    /* Search Input */
+    background-color: white;                              /* Color of element */
+    height: 48px;                                           /* Height of element */
+    width: 85%;                                           /* Width of element */
+    font-size: 22px;                                        /* Font size in Search Input. */
+    border-radius: 24px;                                    /* Rounded corner radius */
+    border: none;                                           /* Borders on element */
+
+    /* Magnifying Glass Icon. */
+    background-image: url('./magnifying-glass-solid.svg');  /* This is the magnifying-glass-solid.svg image to use. */
+    background-size: 24px;                                  /* This controls the size of the icon. */
+    background-repeat: no-repeat;                           /* This makes the icon not repeat. */
+    background-position: 16px 12px;                         /* This adjusts the position of the icon. 16px to the right. 12px down from top. */
+    padding-left: 56px;                                     /* This moves the entered text past the right of the magnifying glass. 16px of padding, 24px of icon, 16px more spacing. */
+}
