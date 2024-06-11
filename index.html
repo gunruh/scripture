@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="es">
 
   <head>
-    <title>Scripture</title>
+    <title>Búsqueda de la Biblia</title>
     <script type="text/javascript" src="index.js"></script>
     <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
 
-    <h1>Bible Search</h1>
+    <h1>Búsqueda de la Biblia</h1>
 
       <search>
-          <form onsubmit="searchBible(bibleIdEnglish, document.getElementById('searchInputBox').value, document.getElementById('resultCard')); return false;">
-              <input id="searchInputBox" placeholder="Search the Bible...">
+          <form onsubmit="buscarBiblia('buscarEntrada', 'resultadoDiv'); return false;">
+              <input id="buscarEntrada" placeholder="Busca en la Biblia...">
           </form>
       </search>
 
-      <div id="resultCard">
+      <div id="resultadoDiv">
       </div>
 
   </body>

@@ -1,51 +1,54 @@
-const apiKey = "xxx"; // Replace "xxx" with API Key
+const claveApi = "xxx"; // Reemplace "xxx" con clave API
 
-const bibleIdEnglish = "9879dbb7cfe39e4d-04"; // World English Bible
-const bibleIdSpanish = "48acedcf8595c754-01"; // Spanish Bible, Palabla de Dios para ti
+const bibliaIdInglés = "9879dbb7cfe39e4d-04"; // World English Bible
+const bibliaIdEspañol = "48acedcf8595c754-01"; // Spanish Bible, Palabla de Dios para ti
 
-const requestOptions = {
+const solicitudOptions = {
   method: "GET",
   headers: {
-    "api-key": `${apiKey}`,
+    "api-key": `${claveApi}`,
   },
 };
 
-function searchBible(bibleId, searchInputText, resultElement) {
+function buscarBiblia(buscarEntradaId, resultadoDivId) {
+  let buscarEntradaValor = document.getElementById(buscarEntradaId).value;
+  let resultadoDiv = document.getElementById(resultadoDivId);
+
   let url = new URL(
-    `https://api.scripture.api.bible/v1/bibles/${bibleId}/search`
+    `https://api.scripture.api.bible/v1/bibles/${bibliaIdEspañol}/search`
   );
 
-  url.searchParams.append("query", searchInputText);
+  url.searchParams.append("query", buscarEntradaValor);
   url.searchParams.append("limit", 5);
 
   console.log("URL: ", url);
 
-  fetch(url, requestOptions)
-    .then((response) => {
-      if (!response.ok) {
-        console.log(response);
-        throw new Error("HTTP Response was not ok");
+  fetch(url, solicitudOptions)
+    .then((respuesta) => {
+      if (!respuesta.ok) {
+        console.log(respuesta);
+        throw new Error("El estado de la respuesta HTTP no era 'OK'");
       }
-      return response.json();
+      return respuesta.json();
     })
-    .then((data) => {
-      let responseHTML = `
-      <div class="result-item-header">
-        <h2>English</h2>
+    .then((datos) => {
+      let respuestaHTML = `
+      <div class="título-elemento-resultado">
+        <h2>Español</h2>
       </div>`;
 
-      for (verse of data.data.verses) {
-        console.log(verse.reference);
-        console.log(verse.text);
+      for (verso of datos.data.verses) {
+        console.log(verso.reference);
+        console.log(verso.text);
 
-        responseHTML = responseHTML.concat(`
-        <div class="result-item">
-            <div><b>${verse.reference}</b></div>
-            <div>${verse.text}</div>
+        respuestaHTML = respuestaHTML.concat(`
+        <div class="elemento-resultado">
+            <div><b>${verso.reference}</b></div>
+            <div>${verso.text}</div>
         </div>`);
       }
 
-      resultElement.innerHTML = responseHTML;
+      resultadoDiv.innerHTML = respuestaHTML;
     })
     .catch((error) => {
       console.error("Error:", error);
