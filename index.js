@@ -32,7 +32,7 @@ function searchBible(searchInputId, resultDivId) {
       return response.json();
     })
     .then((data) => {
-      let middleCardHTML = `
+      let centerCardHTML = `
       <div class="result-item-header">
         <h2>English</h2>
       </div>`;
@@ -41,14 +41,14 @@ function searchBible(searchInputId, resultDivId) {
         console.log(verse.reference);
         console.log(verse.text);
 
-        middleCardHTML = middleCardHTML.concat(`
+        centerCardHTML = centerCardHTML.concat(`
         <div class="result-item">
             <div><b>${verse.reference}</b></div>
             <div>${verse.text}</div>
         </div>`);
       }
 
-      resultDiv.innerHTML = middleCardHTML;
+      resultDiv.innerHTML = centerCardHTML;
     })
     .catch((error) => {
       console.error("Error:", error);
