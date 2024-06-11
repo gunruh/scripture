@@ -37,9 +37,16 @@ input {
 
 #resultDiv {
     margin-top: 32px;
-    width: 352px;
     margin-left: auto;
     margin-right: auto;
+    width: 1184px;
+}
+
+.result-item-card {
+    width: 352px;
+    margin-left: 16px;
+    margin-right: 16px;
+    display: inline-block;
 
     background-color: white;
     border-radius: 24px;

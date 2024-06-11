@@ -48,7 +48,16 @@ function searchBible(searchInputId, resultDivId) {
         </div>`);
       }
 
-      resultDiv.innerHTML = centerCardHTML;
+      resultDiv.innerHTML = `
+      <div class="result-item-card">
+        ${centerCardHTML}
+      </div>
+      <div class="result-item-card">
+        ${centerCardHTML}
+      </div>
+      <div class="result-item-card">
+        ${centerCardHTML}
+      </div>`;
     })
     .catch((error) => {
       console.error("Error:", error);
