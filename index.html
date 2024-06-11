@@ -13,12 +13,12 @@
     <h1>Bible Search</h1>
 
       <search>
-          <form onsubmit="searchBible(bibleIdEnglish, document.getElementById('searchInputBox').value, document.getElementById('resultCard')); return false;">
-              <input id="searchInputBox" placeholder="Search the Bible...">
+          <form onsubmit="searchBible('searchInput', 'resultDiv'); return false;">
+              <input id="searchInput" placeholder="Search the Bible...">
           </form>
       </search>
 
-      <div id="resultCard">
+      <div id="resultDiv">
       </div>
 
   </body>

@@ -10,9 +10,12 @@ const requestOptions = {
   },
 };
 
-function searchBible(bibleId, searchInputText, resultElement) {
+function searchBible(searchInputId, resultDivId) {
+  let searchInputText = document.getElementById(searchInputId).value;
+  let resultDiv = document.getElementById(resultDivId)
+
   let url = new URL(
-    `https://api.scripture.api.bible/v1/bibles/${bibleId}/search`
+    `https://api.scripture.api.bible/v1/bibles/${bibleIdEnglish}/search`
   );
 
   url.searchParams.append("query", searchInputText);
@@ -29,7 +32,7 @@ function searchBible(bibleId, searchInputText, resultElement) {
       return response.json();
     })
     .then((data) => {
-      let responseHTML = `
+      let middleCardHTML = `
       <div class="result-item-header">
         <h2>English</h2>
       </div>`;
@@ -38,14 +41,14 @@ function searchBible(bibleId, searchInputText, resultElement) {
         console.log(verse.reference);
         console.log(verse.text);
 
-        responseHTML = responseHTML.concat(`
+        middleCardHTML = middleCardHTML.concat(`
         <div class="result-item">
             <div><b>${verse.reference}</b></div>
             <div>${verse.text}</div>
         </div>`);
       }
 
-      resultElement.innerHTML = responseHTML;
+      resultDiv.innerHTML = middleCardHTML;
     })
     .catch((error) => {
       console.error("Error:", error);

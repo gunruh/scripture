@@ -35,7 +35,7 @@ input {
     background-position: 16px 12px;                         /* This adjusts the position of the icon. 16px to the right. 12px down from top. */
 }
 
-#resultCard {
+#resultDiv {
     margin-top: 32px;
     width: 352px;
     margin-left: auto;
