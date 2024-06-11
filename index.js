@@ -1,7 +1,7 @@
 const apiKey = "xxx"; // Replace "xxx" with API Key
 
-const bibleIdEnglish = "9879dbb7cfe39e4d-04"; // WEB-Protestant
-const bibleIdSpanish = "48acedcf8595c754-01"; // spaPdDpt
+const bibleIdEnglish = "9879dbb7cfe39e4d-04"; // World English Bible
+const bibleIdSpanish = "48acedcf8595c754-01"; // Spanish Bible, Palabla de Dios para ti
 
 const requestOptions = {
   method: "GET",
@@ -16,6 +16,7 @@ function searchBible(bibleId, searchInputText, resultElement) {
   );
 
   url.searchParams.append("query", searchInputText);
+  url.searchParams.append("limit", 5);
 
   console.log("URL: ", url);
 
@@ -28,17 +29,19 @@ function searchBible(bibleId, searchInputText, resultElement) {
       return response.json();
     })
     .then((data) => {
-      let responseHTML = "";
+      let responseHTML = `
+      <div class="result-item-header">
+        <h2>English</h2>
+      </div>`;
 
       for (verse of data.data.verses) {
         console.log(verse.reference);
         console.log(verse.text);
 
         responseHTML = responseHTML.concat(`
-        <div>
+        <div class="result-item">
             <div><b>${verse.reference}</b></div>
             <div>${verse.text}</div>
-            <div></br></div>
         </div>`);
       }
 
