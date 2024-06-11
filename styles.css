@@ -36,28 +36,29 @@ input {
 }
 
 #resultDiv {
-    margin-top: 32px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1184px;
+    margin-top: 32px;                                       /* 32px top margin above result <div> area */
+    width: 100%;                                            /* fill the width of the page */
+    display: flex;                                          /* using css flex box */
+    justify-content: center;                                /* center the 3 card divs horizontally inside the resultDiv */
 }
 
 .result-item-card {
-    width: 352px;
-    margin-left: 16px;
-    margin-right: 16px;
-    display: inline-block;
+    vertical-align: top;                                    /* Makes the card float to the top of its parent div */
+    width: 352px;                                           /* matches width of search bar */
+    margin-left: 16px;                                      /* 16px left margin (space inbetween cards will be doubled - 32px) */
+    margin-right: 16px;                                     /* 16px right margin (space inbetween cards will be doubled - 32px) */
+    display: inline-block;                                  /* make the <div> elements display horizontally instead of vertically */
 
-    background-color: white;
-    border-radius: 24px;
+    background-color: white;                              /* Background color of a card */
+    border-radius: 24px;                                    /* Border Radius for rounded corners matching the search bar */
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);          /* Shadow around the element. Adjusted 0px horizontally, 4px veritically, 8px blur, 25% opacity. */
 }
 
 .result-item-header h2 {
-    margin: 0px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    text-align: center;
+    margin: 0px;                                            /* Remove the default margin above <h2> elements inside the result-item-card items */
+    padding-top: 16px;                                      /* Using padding instead of margin to create space above the <h2> element */
+    padding-bottom: 16px;                                   /* Using padding instead of margin to create space below the <h2> element */
+    text-align: center;                                     /* Centering the header of the card horizontally */
 }
 
 .result-item {
@@ -65,4 +66,8 @@ input {
     padding-right: 16px;                                    /* 16px padding to the right of result-item elements */
     padding-bottom: 16px;                                   /* 16px padding below  result-item elements */
     padding-left: 16px;                                     /* 16px padding to the left of result-item elements */
+}
+
+.p {
+    margin: 0px;                                            /* The Bible API puts the verses inside <p class="p"> tags which have default margins, so we remove the default margins for this class */
 }

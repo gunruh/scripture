@@ -12,7 +12,7 @@ const requestOptions = {
 
 function searchBible(searchInputId, resultDivId) {
   let searchInputText = document.getElementById(searchInputId).value;
-  let resultDiv = document.getElementById(resultDivId)
+  let resultDiv = document.getElementById(resultDivId);
 
   let url = new URL(
     `https://api.scripture.api.bible/v1/bibles/${bibleIdEnglish}/search`
@@ -32,31 +32,55 @@ function searchBible(searchInputId, resultDivId) {
       return response.json();
     })
     .then((data) => {
+      let leftCardHTML = `
+      <div class="result-item-header">
+        <h2>K'iche'</h2>
+      </div>`;
+
       let centerCardHTML = `
       <div class="result-item-header">
         <h2>English</h2>
+      </div>`;
+
+      let rightCardHTML = `
+      <div class="result-item-header">
+        <h2>Espa&ntilde;ol</h2>
       </div>`;
 
       for (verse of data.data.verses) {
         console.log(verse.reference);
         console.log(verse.text);
 
+        // TODO Make additional REST call here
+        // Escape k'iche' (') characters
+        leftCardHTML = leftCardHTML.concat(`
+          <div class="result-item">
+            <div><b>2 Corintios 5:7</b></div>
+            <div><p class=\"p\">Rumal ri kojob\'al uj k\'aslik man rumal ta ri kaqilo. </p></div>
+          </div>`);
+
         centerCardHTML = centerCardHTML.concat(`
-        <div class="result-item">
+          <div class="result-item">
             <div><b>${verse.reference}</b></div>
             <div>${verse.text}</div>
-        </div>`);
+          </div>`);
+
+        rightCardHTML = rightCardHTML.concat(`
+          <div class="result-item">
+            <div><b>2 Corintios 5:7</b></div>
+            <div><p class=\"p\">porque vivimos por fe, no por vista. </p></div>
+          </div>`);
       }
 
       resultDiv.innerHTML = `
       <div class="result-item-card">
-        ${centerCardHTML}
+        ${leftCardHTML}
       </div>
       <div class="result-item-card">
         ${centerCardHTML}
       </div>
       <div class="result-item-card">
-        ${centerCardHTML}
+        ${rightCardHTML}
       </div>`;
     })
     .catch((error) => {
