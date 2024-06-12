@@ -23,17 +23,17 @@ async function searchBible(searchInputId, resultDivId) {
 
   let centerCardHTML = `
   <div class="result-item-header">
-    <h2>English</h2>
+    <h2>Espa&ntilde;ol</h2>
   </div>`;
 
   let rightCardHTML = `
   <div class="result-item-header">
-    <h2>Espa&ntilde;ol</h2>
+    <h2>Inglés</h2>
   </div>`;
 
   // Search Bible
   let url = new URL(
-    `https://api.scripture.api.bible/v1/bibles/${bibleIdEnglish}/search`
+    `https://api.scripture.api.bible/v1/bibles/${bibleIdSpanish}/search`
   );
 
   url.searchParams.append("query", searchInputText);
@@ -59,7 +59,7 @@ async function searchBible(searchInputId, resultDivId) {
 
     // Get verse in alternate languages
     let verseUrl = new URL(
-      `https://api.scripture.api.bible/v1/bibles/${bibleIdSpanish}/verses/${verse.id}`
+      `https://api.scripture.api.bible/v1/bibles/${bibleIdEnglish}/verses/${verse.id}`
     );
 
     verseUrl.searchParams.append("parallels", bibleIdKiche);
@@ -79,8 +79,8 @@ async function searchBible(searchInputId, resultDivId) {
       });
 
     let verseKiche = getVerseResponseJson.data.parallels[0];
-    let verseEnglish = verse;
-    let verseSpanish = getVerseResponseJson.data;
+    let verseSpanish = verse;
+    let verseEnglish = getVerseResponseJson.data;
 
     leftCardHTML = leftCardHTML.concat(`
       <div class="result-item">
@@ -90,14 +90,14 @@ async function searchBible(searchInputId, resultDivId) {
 
     centerCardHTML = centerCardHTML.concat(`
       <div class="result-item">
-        <div><b>${verseEnglish.reference}</b></div>
-        <div>${verseEnglish.text}</div>
+        <div><b>${verseSpanish.reference}</b></div>
+        <div>${verseSpanish.text}</div>
       </div>`);
 
     rightCardHTML = rightCardHTML.concat(`
       <div class="result-item">
-        <div><b>${verseSpanish.reference}</b></div>
-        <div>${verseSpanish.content}</div>
+        <div><b>${verseEnglish.reference}</b></div>
+        <div>${verseEnglish.content}</div>
       </div>`);
   }
 
