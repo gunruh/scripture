@@ -3,7 +3,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;              /* "Arial" font will be used. If unavailable, "Helvetica" will be used. If unavailable, a "sans-serif" font will be picked. */
 }
 
-h1 {
+body h1 {
     color: black;                                         /* h1 Text Color */
     font-size: 96px;                                        /* Font Size of <h1> Header */
     text-align: center;                                     /* Centered left and right */
@@ -47,7 +47,9 @@ input {
     width: 352px;                                           /* matches width of search bar */
     margin-left: 16px;                                      /* 16px left margin (space inbetween cards will be doubled - 32px) */
     margin-right: 16px;                                     /* 16px right margin (space inbetween cards will be doubled - 32px) */
-    display: inline-block;                                  /* make the <div> elements display horizontally instead of vertically */
+    display: flex;                                          /* Use CSS Flexbox in each Card */
+    flex-direction: column;                                 /* Align card contents vertically */
+    justify-content: space-between;                         /* Distribute card items evenly on the vertical axis */
 
     background-color: white;                              /* Background color of a card */
     border-radius: 24px;                                    /* Border Radius for rounded corners matching the search bar */
