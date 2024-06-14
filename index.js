@@ -111,4 +111,27 @@ async function searchBible(searchInputId, resultDivId) {
       <div class="result-item-card">
         ${rightCardHTML}
       </div>`;
+
+
+  // Align verses across cards after displaying them, by finding the max verse height in each row, and setting that height for entire row.
+  let cardDivArray = resultDiv.getElementsByClassName("result-item-card");
+  
+  // Loop the number of verses in the first card.
+  for (var i = 0; i < cardDivArray[0].getElementsByClassName("result-item").length; i++) {
+    let itemDivRow = [];
+    let itemDivHeights = [];
+    
+    for (cardDiv of cardDivArray) {
+      let itemDiv = cardDiv.getElementsByClassName("result-item")[i];
+      itemDivRow.push(itemDiv);
+      itemDivHeights.push(itemDiv.clientHeight);
+    }
+
+    let maxHeight = Math.max(...itemDivHeights);
+
+    for (itemDiv of itemDivRow) {
+      itemDiv.setAttribute("style", `height: ${maxHeight}px`);
+      itemDiv.style.height=`${maxHeight}px`; // alternate setting for cross-compatibility
+    }
+  }
 }
