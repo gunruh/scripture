@@ -70,10 +70,10 @@ input {
 }
 
 .result-item {
-    padding-top: 0px;                                       /* 0px padding above result-item elements */
-    padding-right: 24px;                                    /* 24px padding to the right of result-item elements */
-    padding-bottom: 24px;                                   /* 24px padding below  result-item elements */
-    padding-left: 24px;                                     /* 24px padding to the left of result-item elements */
+    margin-top: 0px;                                        /* 0px padding above result-item elements */
+    margin-right: 24px;                                     /* 24px padding to the right of result-item elements */
+    margin-bottom: 24px;                                    /* 24px padding below  result-item elements */
+    margin-left: 24px;                                      /* 24px padding to the left of result-item elements */
 }
 
 .p {
