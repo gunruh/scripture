@@ -1,6 +1,11 @@
+html {
+    scrollbar-gutter: stable both-edges;                    /* Adds a gutter space for the scrollbar so that it doesn't change the page width if it appears */
+}
+
 body {
-    background-color: lightgrey;
+    background-color: lightgrey;                          /* The background color for the page */
     font-family: Arial, Helvetica, sans-serif;              /* "Arial" font will be used. If unavailable, "Helvetica" will be used. If unavailable, a "sans-serif" font will be picked. */
+    margin: 0px;                                            /* Remove default margin */
 }
 
 body h1 {
@@ -26,7 +31,7 @@ input {
     border: none;                                           /* Borders on element */
     padding-left: 56px;                                     /* This moves the entered text past the right of the magnifying glass. 16px of padding, 24px of icon, 16px more spacing. */
     width: 296px;                                           /* Width of text input area. (352px total width - 56px left-padding = 296px) */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);          /* Shadow around the element. Adjusted 0px horizontally, 2px veritically, 4px blur, 25% opacity. */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);          /* Shadow around the element. Adjusted 0px horizontally, 2px veritically, 4px blur, 25% opacity. */
 
     /* Magnifying Glass Icon. */
     background-image: url('./magnifying-glass-solid.svg');  /* This is the magnifying-glass-solid.svg image to use. */
@@ -53,21 +58,22 @@ input {
 
     background-color: white;                              /* Background color of a card */
     border-radius: 24px;                                    /* Border Radius for rounded corners matching the search bar */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);          /* Shadow around the element. Adjusted 0px horizontally, 2px veritically, 4px blur, 25% opacity. */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);          /* Shadow around the element. Adjusted 0px horizontally, 2px veritically, 4px blur, 25% opacity. */
 }
 
 .result-item-header h2 {
     margin: 0px;                                            /* Remove the default margin above <h2> elements inside the result-item-card items */
-    padding-top: 16px;                                      /* Using padding instead of margin to create space above the <h2> element */
-    padding-bottom: 16px;                                   /* Using padding instead of margin to create space below the <h2> element */
+    font-size: 1.8em;                                       /* Make card header slightly bigger */
+    padding-top: 24px;                                      /* Using padding to create space above the <h2> element */
+    padding-bottom: 32px;                                   /* Using padding to create space below the <h2> element */
     text-align: center;                                     /* Centering the header of the card horizontally */
 }
 
 .result-item {
     padding-top: 0px;                                       /* 0px padding above result-item elements */
-    padding-right: 16px;                                    /* 16px padding to the right of result-item elements */
-    padding-bottom: 16px;                                   /* 16px padding below  result-item elements */
-    padding-left: 16px;                                     /* 16px padding to the left of result-item elements */
+    padding-right: 24px;                                    /* 24px padding to the right of result-item elements */
+    padding-bottom: 24px;                                   /* 24px padding below  result-item elements */
+    padding-left: 24px;                                     /* 24px padding to the left of result-item elements */
 }
 
 .p {
