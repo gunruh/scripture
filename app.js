@@ -52,7 +52,7 @@ async function searchBible(searchInputId, resultDivId) {
 
   // Start the loading-icon.
   resultDiv.innerHTML = `
-  <img class="loading-icon" src="spinner-solid.svg"></img>`;
+  <img class="loading-icon" src="icons/spinner-solid.svg"></img>`;
 
   // Send an HTTP request to the URL to search for verses containing the search words.
   const searchBibleResponseJson = await fetch(searchUrl, requestOptions)
