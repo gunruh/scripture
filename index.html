@@ -4,7 +4,7 @@
 
   <head>
     <title>Búsqueda de la Biblia</title>
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="app.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -13,7 +13,7 @@
     <h1>Búsqueda de la Biblia</h1>
 
     <search>
-      <form onsubmit="searchBible('searchInput', 'resultDiv'); return false;">
+      <form onsubmit="searchBible('searchInput', 'resultDiv'); return false;" autocomplete="off">
         <input id="searchInput" placeholder="Buscar en el Nuevo Testamento..." />
       </form>
     </search>
