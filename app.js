@@ -47,7 +47,7 @@ async function searchBible(searchInputId, resultDivId) {
   searchUrl.searchParams.append("limit", 5);
   searchUrl.searchParams.append("range", "MAT-REV"); // Only search New Testament (Matthew - Revelation)
 
-  // Output the created URL to the Developer Tools logs.
+  // Output the created URL to the Developer Tools console logs.
   console.log("Bible Search URL: ", searchUrl);
 
   // Start the loading-icon.
@@ -69,7 +69,7 @@ async function searchBible(searchInputId, resultDivId) {
     })
     .catch((error) => {
       // Log any caught error to the console.
-      console.error("An error was caught:", error);
+      console.error("An error was caught during Search Bible request:", error);
     });
 
   // Loop through each verse returned in the search result to get its information.
@@ -84,6 +84,9 @@ async function searchBible(searchInputId, resultDivId) {
     verseUrl.searchParams.append("parallels", bibleIdKiche);
     verseUrl.searchParams.append("include-titles", false);
     verseUrl.searchParams.append("include-verse-numbers", false);
+
+    // Output the created URL to the Developer Tools console logs.
+    console.log("Get Verse URL: ", searchUrl);
 
     // Send an HTTP request to get the verse in the additional Bible IDs.
     const getVerseResponseJson = await fetch(verseUrl, requestOptions)
@@ -100,7 +103,7 @@ async function searchBible(searchInputId, resultDivId) {
       })
       .catch((error) => {
         // Log any caught error to the console.
-        console.error("Error:", error);
+        console.error("An error was caught during Get Verse request:", error);
       });
 
     // Define variables for the K'iche', Spanish, and English verses.
