@@ -86,7 +86,7 @@ async function searchBible(searchInputId, resultDivId) {
     verseUrl.searchParams.append("include-verse-numbers", false);
 
     // Output the created URL to the Developer Tools console logs.
-    console.log("Get Verse URL: ", searchUrl);
+    console.log("Get Verse URL: ", verseUrl);
 
     // Send an HTTP request to get the verse in the additional Bible IDs.
     const getVerseResponseJson = await fetch(verseUrl, requestOptions)
