@@ -1,4 +1,4 @@
-const apiKey = "xxx"; // Replace "xxx" with API Key
+const apiKey = "xxx"; // Replace "xxx" with API Key.
 
 const bibleIdKiche = "a77409f7cf5be995-01"; // Bible Id for "Nuevo Testamento K'iche' of Totonicapan"
 const bibleIdSpanish = "48acedcf8595c754-01"; // Bible Id for "Spanish Bible, Palabla de Dios para ti"
@@ -45,7 +45,7 @@ async function searchBible(searchInputId, resultDivId) {
   // Add query parameters to the URL.
   searchUrl.searchParams.append("query", searchInput.value);
   searchUrl.searchParams.append("limit", 5);
-  searchUrl.searchParams.append("range", "MAT-REV"); // Only search New Testament (Matthew - Revelation)
+  searchUrl.searchParams.append("range", "MAT-REV"); // Only search New Testament, Matthew (MAT) - Revelation (REV).
 
   // Output the created URL to the Developer Tools console logs.
   console.log("Bible Search URL: ", searchUrl);
@@ -92,7 +92,7 @@ async function searchBible(searchInputId, resultDivId) {
     const getVerseResponseJson = await fetch(verseUrl, requestOptions)
       .then((response) => {
         
-        // If the response status is not 200 (OK), log the response
+        // If the response status is not 200 (OK), log the response.
         if (!response.ok) {
           console.log("Get Verse response:", response);
           throw new Error("HTTP Get Verse - Response was not ok");
@@ -170,7 +170,7 @@ async function searchBible(searchInputId, resultDivId) {
     let itemDivRow = []; // A list for each <div> result-item in a row (left to right).
     let itemDivHeights = []; // A list for the heights of each result-item <div> in a row (left to right).
 
-    // Loop through the list of card <div>s
+    // Loop through the list of card <div>s.
     for (cardDiv of cardDivArray) {
 
       // Get the <div> of the result-item that we want to add to our list.
