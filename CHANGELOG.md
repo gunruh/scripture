@@ -9,11 +9,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Updated mock-up screenshots
+- Add versions of project at various stages to aid with teaching.
 
-### Fixed
+## [1.1.2] - 2024-06-19
 
-- Revise and simplify all code files to be easier to understand.
+### Added
+
+- Loading icon that spins while waiting for search results.
+- New accurate design mockups, including a layout file displaying CSS values.
+
+### Changed
+
+- `index.js` renamed to `app.js` to avoid confusion with `index.html`.
+  - Using complete sentences and more detail in comments for clarity, and to help with language conversion.
+- `index.html`
+  - `<title>` now matches the `<h1>` text.
+  - Added `autocomplete="off"` to `<form>` because autocomplete values were covering up the loading icon and causing magnifying-glass icon to disappear.
+- `styles.css`
+  - Created "spin" animation in order to spin the loading-icon.
+  - Using complete sentences in comments for clarity, and to help with language conversion.
+- `README.md` added link to spinner svg download.
 
 ## [1.1.1] - 2024-06-13
 
@@ -48,7 +63,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Using simplified 'searchBible' function parameters.
   - Changed placeholder text to "Enter key words..."
 - `index.js`
-  - Now only searching New Testament (MAT - REV)
+  - Now only searching New Testament (MAT - REV) because K'iche' Bible currently only includes New Testament.
 - `styles.css`
   - Adjusted shadow blur from 8px to 4px to make it slightly more subtle.
   - Added comments where missing.
