@@ -15,6 +15,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Revise and simplify all code files to be easier to understand.
 
+## [1.1.1] - 2024-06-13
+
+### Updated
+
+- `index.html` updated placeholder to "Search the New Testament..."
+- `index.js` added code to align verses across cards based on max verse height in row.
+- `styles.css`
+  - Setting shadow blur back to 8px.
+  - Adding comments to existing settings where needed.
+  - Increasing font size of card headers slightly.
+  - Using margin instead of padding for spacing between result-items.
+
+### Fixed
+
+- `styles.css` using `scrollbar-gutter` to prevent movement when scrollbar appears.
+
 ## [1.1.0] - 2024-06-12
 
 ### Added
