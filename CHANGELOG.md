@@ -15,6 +15,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Revise and simplify all code files to be easier to understand.
 
+## [1.1.0] - 2024-06-12
+
+### Added
+
+- Multilingual Bible Search UI
+- `index.js`
+  - Added K'iche' Bible Id constant.
+  - Added 3-card layout for multiple language results.
+
+### Changed
+
+- `README.md`
+  - Removed instructions for changing language. Will keep each version focused on a main language moving forward.
+- `index.html`
+  - Using simplified 'searchBible' function parameters.
+  - Changed placeholder text to "Enter key words..."
+- `index.js`
+  - Now only searching New Testament (MAT - REV)
+- `styles.css`
+  - Adjusted shadow blur from 8px to 4px to make it slightly more subtle.
+  - Added comments where missing.
+
+### Fixed
+
+- `index.html` added some missing forward slashes to end tags.
+
 ## [1.0.0] - 2024-06-10
 
 ### Added

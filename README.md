@@ -18,11 +18,6 @@ const apiKey = "xxx"; // Replace "xxx" with API Key
 ```
 
 - Open `index.html` using a web browser.
-- For Spanish Bible search, replace `bibleIdEnglish` with `bibleIdSpanish` inside `index.html`
-
-```html
-<form onsubmit="searchBible(bibleIdEnglish, ...
-```
 
 ## Resources
 

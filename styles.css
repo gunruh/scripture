@@ -3,7 +3,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;              /* "Arial" font will be used. If unavailable, "Helvetica" will be used. If unavailable, a "sans-serif" font will be picked. */
 }
 
-h1 {
+body h1 {
     color: black;                                         /* h1 Text Color */
     font-size: 96px;                                        /* Font Size of <h1> Header */
     text-align: center;                                     /* Centered left and right */
@@ -26,7 +26,7 @@ input {
     border: none;                                           /* Borders on element */
     padding-left: 56px;                                     /* This moves the entered text past the right of the magnifying glass. 16px of padding, 24px of icon, 16px more spacing. */
     width: 296px;                                           /* Width of text input area. (352px total width - 56px left-padding = 296px) */
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);          /* Shadow around the element. Adjusted 0px horizontally, 4px veritically, 8px blur, 25% opacity. */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);          /* Shadow around the element. Adjusted 0px horizontally, 2px veritically, 4px blur, 25% opacity. */
 
     /* Magnifying Glass Icon. */
     background-image: url('./magnifying-glass-solid.svg');  /* This is the magnifying-glass-solid.svg image to use. */
@@ -35,22 +35,32 @@ input {
     background-position: 16px 12px;                         /* This adjusts the position of the icon. 16px to the right. 12px down from top. */
 }
 
-#resultCard {
-    margin-top: 32px;
-    width: 352px;
-    margin-left: auto;
-    margin-right: auto;
+#resultDiv {
+    margin-top: 32px;                                       /* 32px top margin above result <div> area */
+    width: 100%;                                            /* fill the width of the page */
+    display: flex;                                          /* using css flex box */
+    justify-content: center;                                /* center the 3 card divs horizontally inside the resultDiv */
+}
 
-    background-color: white;
-    border-radius: 24px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);          /* Shadow around the element. Adjusted 0px horizontally, 4px veritically, 8px blur, 25% opacity. */
+.result-item-card {
+    vertical-align: top;                                    /* Makes the card float to the top of its parent div */
+    width: 352px;                                           /* matches width of search bar */
+    margin-left: 16px;                                      /* 16px left margin (space inbetween cards will be doubled - 32px) */
+    margin-right: 16px;                                     /* 16px right margin (space inbetween cards will be doubled - 32px) */
+    display: flex;                                          /* Use CSS Flexbox in each Card */
+    flex-direction: column;                                 /* Align card contents vertically */
+    justify-content: space-between;                         /* Distribute card items evenly on the vertical axis */
+
+    background-color: white;                              /* Background color of a card */
+    border-radius: 24px;                                    /* Border Radius for rounded corners matching the search bar */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);          /* Shadow around the element. Adjusted 0px horizontally, 2px veritically, 4px blur, 25% opacity. */
 }
 
 .result-item-header h2 {
-    margin: 0px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    text-align: center;
+    margin: 0px;                                            /* Remove the default margin above <h2> elements inside the result-item-card items */
+    padding-top: 16px;                                      /* Using padding instead of margin to create space above the <h2> element */
+    padding-bottom: 16px;                                   /* Using padding instead of margin to create space below the <h2> element */
+    text-align: center;                                     /* Centering the header of the card horizontally */
 }
 
 .result-item {
@@ -58,4 +68,8 @@ input {
     padding-right: 16px;                                    /* 16px padding to the right of result-item elements */
     padding-bottom: 16px;                                   /* 16px padding below  result-item elements */
     padding-left: 16px;                                     /* 16px padding to the left of result-item elements */
+}
+
+.p {
+    margin: 0px;                                            /* The Bible API puts the verses inside <p class="p"> tags which have default margins, so we remove the default margins for this class */
 }
