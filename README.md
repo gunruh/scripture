@@ -12,11 +12,14 @@ A basic HTML, CSS, and JavaScript project to assist with reading Scripture
 
 - Navigate to https://scripture.api.bible and click "Get Started" to create an account and receive an API Key.
 - Inside `index.js`, paste your API Key into the first line in place of the "xxx".
+
 ```js
 const apiKey = "xxx"; // Replace "xxx" with API Key
 ```
+
 - Open `index.html` using a web browser.
 - For Spanish Bible search, replace `bibleIdEnglish` with `bibleIdSpanish` inside `index.html`
+
 ```html
 <form onsubmit="searchBible(bibleIdEnglish, ...
 ```
@@ -26,6 +29,11 @@ const apiKey = "xxx"; // Replace "xxx" with API Key
 ### API
 
 - [API.Bible - API for accessing Bible verses](https://scripture.api.bible/)
+- [Talend API Tester](https://chromewebstore.google.com/detail/talend-api-tester-free-ed/aejoelaoggembcahagimdiliamlcdmfm?hl=en)
+
+### Icon Download
+
+- [Magnifying Glass](https://fontawesome.com/icons/magnifying-glass?f=classic&s=solid&pc=%23d3d3d3)
 
 ### Tutorials
 
