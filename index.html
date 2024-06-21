@@ -5,21 +5,20 @@
   <head>
     <title>Scripture</title>
     <script type="text/javascript" src="index.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
 
     <h1>Bible Search</h1>
 
-      <search>
-          <form onsubmit="searchBible(bibleIdEnglish, document.getElementById('searchInputBox').value, document.getElementById('resultCard')); return false;">
-              <input id="searchInputBox" placeholder="Search the Bible...">
-          </form>
-      </search>
+    <search>
+      <form onsubmit="searchBible('searchInput', 'resultDiv'); return false;">
+        <input id="searchInput" placeholder="Enter key words..." />
+      </form>
+    </search>
 
-      <div id="resultCard">
-      </div>
+    <div id="resultDiv"></div>
 
   </body>
 
