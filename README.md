@@ -11,7 +11,7 @@ A basic HTML, CSS, and JavaScript project to assist with reading Scripture
 ## Usage
 
 - Navigate to https://scripture.api.bible and click "Get Started" to create an account and receive an API Key.
-- Inside `index.js`, paste your API Key into the first line in place of the "xxx".
+- Inside `app.js`, paste your API Key into the first line in place of the "xxx".
 
 ```js
 const apiKey = "xxx"; // Replace "xxx" with API Key
@@ -29,6 +29,7 @@ const apiKey = "xxx"; // Replace "xxx" with API Key
 ### Icon Download
 
 - [Magnifying Glass](https://fontawesome.com/icons/magnifying-glass?f=classic&s=solid&pc=%23d3d3d3)
+- [Spinner](https://fontawesome.com/icons/spinner?f=classic&s=solid&sz=2xl&pc=%23000000)
 
 ### Tutorials
 
