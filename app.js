@@ -1,7 +1,8 @@
 const apiKey = "xxx"; // Replace "xxx" with API Key.
 
 const bibleIdKiche = "a77409f7cf5be995-01"; // Bible Id for "Nuevo Testamento K'iche' of Totonicapan"
-const bibleIdSpanish = "48acedcf8595c754-01"; // Bible Id for "Spanish Bible, Palabla de Dios para ti"
+// const bibleIdSpanish = "48acedcf8595c754-01"; // Bible Id for "Spanish Bible, Palabla de Dios para ti"
+const bibleIdSpanish = "592420522e16049f-01"; // Bible Id for "Biblia Reina Valera 1909"
 const bibleIdEnglish = "9879dbb7cfe39e4d-04"; // Bible Id for "World English Bible"
 
 // Create "RequestOptions" to send on each HTTP request.
