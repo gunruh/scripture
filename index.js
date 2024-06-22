@@ -31,7 +31,7 @@ function searchBible(bibleId, searchInputText, resultElement) {
     .then((data) => {
       let responseHTML = `
       <div class="result-item-header">
-        <h2>English</h2>
+        <h2>Bible Verses</h2>
       </div>`;
 
       for (verse of data.data.verses) {
