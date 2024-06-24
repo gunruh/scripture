@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add versions of project at various stages to aid with teaching.
 
+## [1.1.3] - 2024-06-23
+
+### Updated
+
+- Bible Id
+- Background color is now: `#f0f0f0`
+
 ## [1.1.2] - 2024-06-19
 
 ### Added
