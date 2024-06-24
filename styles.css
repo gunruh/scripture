@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    background-color: lightgrey;                              /* Set the background color for the page. */
+    background-color: #f0f0f0;                              /* Set the background color for the page. */
     font-family: Arial, Helvetica, sans-serif;                  /* "Arial" font will be used. If unavailable, "Helvetica" will be used. If unavailable, a "sans-serif" font will be picked. */
     margin: 0px;                                                /* Set all margins to 0px. (This removes the default margin.) */
 }
