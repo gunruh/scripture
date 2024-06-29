@@ -1,6 +1,6 @@
 # Scripture
 
-A basic HTML, CSS, and JavaScript project to assist with reading Scripture
+A basic HTML, CSS, and JavaScript project to assist with searching Scripture
 
 ## Requirements
 
