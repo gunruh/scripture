@@ -27,7 +27,7 @@ async function searchBible(searchInputId, resultDivId) {
   // \\\\\\\\\\ Edit Here ////////// - Task: Create 'leftCardHTML' here
 
   // ////////// Edit Here \\\\\\\\\\
-  
+
   let mainCardHTML = `
   <div class="result-item-header">
     <h2>Search Results</h2>
@@ -76,16 +76,16 @@ async function searchBible(searchInputId, resultDivId) {
 
   // Loop through each verse returned in the search result to get its information.
   for (verse of searchBibleResponseJson.data.verses) {
-  
+
 // Task: Add another API call to request the verse from alternate Bible Ids
 
 /* // Remove this line.
-    
+
     // Create a new URL to get this verse from the other Bible IDs.
     let verseUrl = new URL(
       `https://api.scripture.api.bible/v1/bibles/${bibleIdSpanish}/verses/${verse.id}`
     );
-    
+
     // Add query parameters to the verse URL.
     verseUrl.searchParams.append("include-titles", false);
     verseUrl.searchParams.append("include-verse-numbers", false);
@@ -96,24 +96,24 @@ async function searchBible(searchInputId, resultDivId) {
 
     // Output the created URL to the Developer Tools console logs.
     console.log("Get Verse URL: ", verseUrl);
-    
+
     // Send an HTTP request to get the verse in the additional Bible IDs.
     const getVerseResponseJson = await fetch(verseUrl, requestOptions)
-    .then((response) => {
-      
-      // If the response status is not 200 (OK), log the response.
-      if (!response.ok) {
-        console.log("Get Verse response:", response);
-        throw new Error("HTTP Get Verse - Response was not ok");
-      }
-      
-      // Return the response body JSON.
-      return response.json();
-    })
-    .catch((error) => {
-      // Log any caught error to the console.
-      console.error("An error was caught during Get Verse request:", error);
-    });
+      .then((response) => {
+        
+        // If the response status is not 200 (OK), log the response.
+        if (!response.ok) {
+          console.log("Get Verse response:", response);
+          throw new Error("HTTP Get Verse - Response was not ok");
+        }
+
+        // Return the response body JSON.
+        return response.json();
+      })
+      .catch((error) => {
+        // Log any caught error to the console.
+        console.error("An error was caught during Get Verse request:", error);
+      });
 
 */ // Remove this line.
 
@@ -122,13 +122,13 @@ async function searchBible(searchInputId, resultDivId) {
     // let verseKiche = getVerseResponseJson.data.parallels[0];     // Task: Uncomment this line
     let verseEnglish = verse;
     // let verseSpanish = getVerseResponseJson.data;                // Task: Uncomment this line
-    
+
     // Add the information from each verse to the correct card <div>.
 
     // \\\\\\\\\\ Edit Here ////////// - Task: Add the "result-item" <div>s to the leftCardHTML here - remember to use verse.content instead of verse.text!
 
     // ////////// Edit Here \\\\\\\\\\
-      
+
       mainCardHTML = mainCardHTML.concat(`
         <div class="result-item">
         <div><b>${verseEnglish.reference}</b></div>

@@ -24,7 +24,7 @@ async function searchBible(searchInputId, resultDivId) {
   let resultDiv = document.getElementById(resultDivId); // Get the result <div> element.
 
   // Set up the header text for each card <div>.
-  
+
   // \\\\\\\\\\ Edit Here ////////// - Task: Create 'leftCardHTML' here
   let leftCardHTML = `
   <div class="result-item-header">
@@ -53,10 +53,10 @@ async function searchBible(searchInputId, resultDivId) {
   // Add query parameters to the URL.
   searchUrl.searchParams.append("query", searchInput.value);
   searchUrl.searchParams.append("range", "MAT-REV"); // Only search New Testament, Matthew (MAT) - Revelation (REV).
-  
+
   // \\\\\\\\\\ Edit Here ////////// - Task: Add another URL search parameter to "limit" search results to only 5.
   searchUrl.searchParams.append("limit", 5);
-  // ////////// Edit Here \\\\\\\\\\  
+  // ////////// Edit Here \\\\\\\\\\
 
   // Output the created URL to the Developer Tools console logs.
   console.log("Bible Search URL: ", searchUrl);
@@ -84,7 +84,7 @@ async function searchBible(searchInputId, resultDivId) {
 
   // Loop through each verse returned in the search result to get its information.
   for (verse of searchBibleResponseJson.data.verses) {
-      
+
 // Task: Add another API call to request the verse from alternate Bible Ids
 
 
@@ -124,7 +124,7 @@ async function searchBible(searchInputId, resultDivId) {
       });
 
 
-    
+
     // Define variables for the K'iche', Spanish, and English verses.
 
     let verseKiche = getVerseResponseJson.data.parallels[0];     // Task: Uncomment this line
