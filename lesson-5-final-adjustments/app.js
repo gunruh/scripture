@@ -1,8 +1,11 @@
 const apiKey = "xxx"; // Replace "xxx" with API Key.
 
+const bibleIdEnglish = "9879dbb7cfe39e4d-04"; // Bible Id for "World English Bible"
+
+// \\\\\\\\\\ Edit Here ////////// - Task: Add 2 additional Bible Ids
 const bibleIdKiche = "a77409f7cf5be995-01"; // Bible Id for "Nuevo Testamento K'iche' of Totonicapan"
 const bibleIdSpanish = "592420522e16049f-01"; // Bible Id for "Biblia Reina Valera 1909"
-const bibleIdEnglish = "9879dbb7cfe39e4d-04"; // Bible Id for "World English Bible"
+// ////////// Edit Here \\\\\\\\\\
 
 // Create "RequestOptions" to send on each HTTP request.
 const requestOptions = {
@@ -21,21 +24,26 @@ async function searchBible(searchInputId, resultDivId) {
   let resultDiv = document.getElementById(resultDivId); // Get the result <div> element.
 
   // Set up the header text for each card <div>.
+  
+  // \\\\\\\\\\ Edit Here ////////// - Task: Create 'leftCardHTML' here
   let leftCardHTML = `
   <div class="result-item-header">
     <h2>K'iche'</h2>
   </div>`;
+  // ////////// Edit Here \\\\\\\\\\
 
-  let centerCardHTML = `
+  let mainCardHTML = `
   <div class="result-item-header">
     <h2>English</h2>
   </div>`;
 
+  // \\\\\\\\\\ Edit Here ////////// - Task: Create 'rightCardHTML' here
   // Note: The ñ character in "Español" is represented as "&ntilde;" in HTML.
   let rightCardHTML = `
   <div class="result-item-header">
     <h2>Espa&ntilde;ol</h2> 
   </div>`;
+  // ////////// Edit Here \\\\\\\\\\
 
   // Create a search Bible URL object.
   let searchUrl = new URL(
@@ -44,15 +52,17 @@ async function searchBible(searchInputId, resultDivId) {
 
   // Add query parameters to the URL.
   searchUrl.searchParams.append("query", searchInput.value);
-  searchUrl.searchParams.append("limit", 5);
   searchUrl.searchParams.append("range", "MAT-REV"); // Only search New Testament, Matthew (MAT) - Revelation (REV).
+  
+  // \\\\\\\\\\ Edit Here ////////// - Task: Add another URL search parameter to "limit" search results to only 5.
+  searchUrl.searchParams.append("limit", 5);
+  // ////////// Edit Here \\\\\\\\\\  
 
   // Output the created URL to the Developer Tools console logs.
   console.log("Bible Search URL: ", searchUrl);
 
   // Start the loading-icon.
-  resultDiv.innerHTML = `
-  <img class="loading-icon" src="icons/spinner-solid.svg"></img>`;
+  resultDiv.innerHTML = `<img class="loading-icon" src="icons/spinner-solid.svg"></img>`;
 
   // Send an HTTP request to the URL to search for verses containing the search words.
   const searchBibleResponseJson = await fetch(searchUrl, requestOptions)
@@ -74,6 +84,10 @@ async function searchBible(searchInputId, resultDivId) {
 
   // Loop through each verse returned in the search result to get its information.
   for (verse of searchBibleResponseJson.data.verses) {
+      
+// Task: Add another API call to request the verse from alternate Bible Ids
+
+
 
     // Create a new URL to get this verse from the other Bible IDs.
     let verseUrl = new URL(
@@ -81,9 +95,12 @@ async function searchBible(searchInputId, resultDivId) {
     );
 
     // Add query parameters to the verse URL.
-    verseUrl.searchParams.append("parallels", bibleIdKiche);
     verseUrl.searchParams.append("include-titles", false);
     verseUrl.searchParams.append("include-verse-numbers", false);
+    
+    // \\\\\\\\\\ Edit Here ////////// - Task: Add another URL query parameter here for the "parallels" bibleId
+    verseUrl.searchParams.append("parallels", bibleIdKiche);
+    // ////////// Edit Here \\\\\\\\\\
 
     // Output the created URL to the Developer Tools console logs.
     console.log("Get Verse URL: ", verseUrl);
@@ -106,30 +123,40 @@ async function searchBible(searchInputId, resultDivId) {
         console.error("An error was caught during Get Verse request:", error);
       });
 
+
+    
     // Define variables for the K'iche', Spanish, and English verses.
-    let verseKiche = getVerseResponseJson.data.parallels[0];
+
+    let verseKiche = getVerseResponseJson.data.parallels[0];     // Task: Uncomment this line
     let verseEnglish = verse;
-    let verseSpanish = getVerseResponseJson.data;
+    let verseSpanish = getVerseResponseJson.data;                // Task: Uncomment this line
 
     // Add the information from each verse to the correct card <div>.
+
+    // \\\\\\\\\\ Edit Here ////////// - Task: Add the "result-item" <div>s to the leftCardHTML here - remember to use verse.content instead of verse.text!
     leftCardHTML = leftCardHTML.concat(`
       <div class="result-item">
         <div><b>${verseKiche.reference}</b></div>
         <div>${verseKiche.content}</div>
       </div>`);
+    // ////////// Edit Here \\\\\\\\\\
 
-    centerCardHTML = centerCardHTML.concat(`
+    mainCardHTML = mainCardHTML.concat(`
       <div class="result-item">
         <div><b>${verseEnglish.reference}</b></div>
         <div>${verseEnglish.text}</div>
       </div>`);
 
+    // \\\\\\\\\\ Edit Here ////////// - Task: Add the "result-item" <div>s to the rightCardHTML here - remember to use verse.content instead of verse.text!
     rightCardHTML = rightCardHTML.concat(`
       <div class="result-item">
         <div><b>${verseSpanish.reference}</b></div>
         <div>${verseSpanish.content}</div>
       </div>`);
+    // ////////// Edit Here \\\\\\\\\\
   }
+
+  // \\\\\\\\\\ Edit Here ////////// - Task: Add the left and right "result-item-card" <divs> to the whole resultDiv.
 
   // Set the result <div> contents to contain the 3 card <divs>.
   resultDiv.innerHTML = `
@@ -137,14 +164,20 @@ async function searchBible(searchInputId, resultDivId) {
         ${leftCardHTML}
       </div>
       <div class="result-item-card">
-        ${centerCardHTML}
+        ${mainCardHTML}
       </div>
       <div class="result-item-card">
         ${rightCardHTML}
       </div>`;
 
-  // The below code is optional...
+  // ////////// Edit Here \\\\\\\\\\
 
+
+  alignResultItems(resultDiv); // Task: Uncomment this line.
+  
+}
+
+function alignResultItems(resultDiv) {
   /*
     Because verses are different heights in different languages,
     We can align the verse result-items by giving each verse result-item <div> in a row a matching height.

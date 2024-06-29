@@ -2,9 +2,9 @@ const apiKey = "xxx"; // Replace "xxx" with API Key.
 
 const bibleIdEnglish = "9879dbb7cfe39e4d-04"; // Bible Id for "World English Bible"
 
-/* vvv Edit Here vvv  - Task: add additional Bible Ids */
+// \\\\\\\\\\ Edit Here ////////// - Task: Add 2 additional Bible Ids
 
-/* ^^^ Edit Here ^^^ */
+// ////////// Edit Here \\\\\\\\\\
 
 // Create "RequestOptions" to send on each HTTP request.
 const requestOptions = {
@@ -24,18 +24,18 @@ async function searchBible(searchInputId, resultDivId) {
 
   // Set up the header text for each card <div>.
 
-  /* vvv Edit Here vvv  - Task: create 'leftCardHTML' here */
-  
-  /* ^^^ Edit Here ^^^ */
+  // \\\\\\\\\\ Edit Here ////////// - Task: Create 'leftCardHTML' here
+
+  // ////////// Edit Here \\\\\\\\\\
   
   let mainCardHTML = `
   <div class="result-item-header">
-    <h2>English</h2>
+    <h2>Search Results</h2>
   </div>`;
 
-  /* vvv Edit Here vvv  - Task: create 'rightCardHTML' here */
-  
-  /* ^^^ Edit Here ^^^ */
+  // \\\\\\\\\\ Edit Here ////////// - Task: Create 'rightCardHTML' here
+
+  // ////////// Edit Here \\\\\\\\\\
 
   // Create a search Bible URL object.
   let searchUrl = new URL(
@@ -44,15 +44,17 @@ async function searchBible(searchInputId, resultDivId) {
 
   // Add query parameters to the URL.
   searchUrl.searchParams.append("query", searchInput.value);
-  searchUrl.searchParams.append("limit", 5);
   searchUrl.searchParams.append("range", "MAT-REV"); // Only search New Testament, Matthew (MAT) - Revelation (REV).
+
+  // \\\\\\\\\\ Edit Here ////////// - Task: Add another URL search parameter to "limit" search results to only 5.
+
+  // ////////// Edit Here \\\\\\\\\\
 
   // Output the created URL to the Developer Tools console logs.
   console.log("Bible Search URL: ", searchUrl);
 
   // Start the loading-icon.
-  resultDiv.innerHTML = `
-  <img class="loading-icon" src="icons/spinner-solid.svg"></img>`;
+  resultDiv.innerHTML = `<img class="loading-icon" src="icons/spinner-solid.svg"></img>`;
 
   // Send an HTTP request to the URL to search for verses containing the search words.
   const searchBibleResponseJson = await fetch(searchUrl, requestOptions)
@@ -74,21 +76,24 @@ async function searchBible(searchInputId, resultDivId) {
 
   // Loop through each verse returned in the search result to get its information.
   for (verse of searchBibleResponseJson.data.verses) {
-
-    /* vvv Edit Here vvv  - Task: Add another API call to request the verse from alternate Bible Ids */
   
+// Task: Add another API call to request the verse from alternate Bible Ids
+
+/* // Remove this line.
     
     // Create a new URL to get this verse from the other Bible IDs.
     let verseUrl = new URL(
-      `https://api.scripture.api.bible/v1/bibles/<bible-id-here>/verses/${verse.id}`
+      `https://api.scripture.api.bible/v1/bibles/${bibleIdSpanish}/verses/${verse.id}`
     );
     
     // Add query parameters to the verse URL.
-    
-    // *** Add another parameter here for the 'parallel' bibleId ***
     verseUrl.searchParams.append("include-titles", false);
     verseUrl.searchParams.append("include-verse-numbers", false);
     
+    // \\\\\\\\\\ Edit Here ////////// - Task: Add another URL query parameter here for the "parallels" bibleId
+
+    // ////////// Edit Here \\\\\\\\\\
+
     // Output the created URL to the Developer Tools console logs.
     console.log("Get Verse URL: ", verseUrl);
     
@@ -109,35 +114,33 @@ async function searchBible(searchInputId, resultDivId) {
       // Log any caught error to the console.
       console.error("An error was caught during Get Verse request:", error);
     });
-    
-    // Define variables for the K'iche', Spanish, and English verses.
-    
-    // let verseKiche = getVerseResponseJson.data.parallels[0];
-    let verseEnglish = verse;
-    // let verseSpanish = getVerseResponseJson.data;
 
-    /* ^^^ Edit Here ^^^ */
+*/ // Remove this line.
+
+    // Define variables for the K'iche', Spanish, and English verses.
+
+    // let verseKiche = getVerseResponseJson.data.parallels[0];     // Task: Uncomment this line
+    let verseEnglish = verse;
+    // let verseSpanish = getVerseResponseJson.data;                // Task: Uncomment this line
     
     // Add the information from each verse to the correct card <div>.
 
-    /* vvv Edit Here vvv  - Task: create 'leftCardHTML' here */
+    // \\\\\\\\\\ Edit Here ////////// - Task: Add the "result-item" <div>s to the leftCardHTML here - remember to use verse.content instead of verse.text!
 
-    // Add the "result-item" <div>s to the leftCardHTML and rightCardHTML here - remember to use verse.content instead of verse.text for these!
-  
-    /* ^^^ Edit Here ^^^ */
+    // ////////// Edit Here \\\\\\\\\\
       
       mainCardHTML = mainCardHTML.concat(`
         <div class="result-item">
         <div><b>${verseEnglish.reference}</b></div>
         <div>${verseEnglish.text}</div>
       </div>`);
+
+    // \\\\\\\\\\ Edit Here ////////// - Task: Add the "result-item" <div>s to the rightCardHTML here - remember to use verse.content instead of verse.text!
+  
+    // ////////// Edit Here \\\\\\\\\\
   }
 
-  /* vvv Edit Here vvv  - Task: create 'leftCardHTML' here */
-
-  // Add the left and right "result-item-card" <divs> to the whole resultDiv.
-
-  /* ^^^ Edit Here ^^^ */
+  // \\\\\\\\\\ Edit Here ////////// - Task: Add the left and right "result-item-card" <divs> to the whole resultDiv.
 
   // Set the result <div> contents to contain the 3 card <divs>.
   resultDiv.innerHTML = `
@@ -145,8 +148,14 @@ async function searchBible(searchInputId, resultDivId) {
         ${mainCardHTML}
       </div>`;
 
-  // The below code is optional...
+  // ////////// Edit Here \\\\\\\\\\
 
+
+  // alignResultItems(resultDiv); // Task: Uncomment this line.
+  
+}
+
+function alignResultItems(resultDiv) {
   /*
     Because verses are different heights in different languages,
     We can align the verse result-items by giving each verse result-item <div> in a row a matching height.

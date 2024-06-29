@@ -54,8 +54,9 @@ input {
 }
 
 .result-item-card {
+    padding-top: 24px;                                          /* Use padding to create space at the top of the card. */
     vertical-align: top;                                        /* Make the cards align to the top of their parent <div>. */
-    width: 352px;                                               /* Set the width of each card <div> to be 352px. (The same width as the <search> element.) */
+    width: 736px;                                               /* Set the width of each card <div> to be 352px. (The same width as the <search> element.) */
     margin-left: 16px;                                          /* Set a 16px left margin (spacing) for each card <div>. */
     margin-right: 16px;                                         /* Set a 16px right margin (spacing) for each card <div>. */
     display: flex;                                              /* Set each each card <div> as a "flexbox" container, so that its contents can be aligned. */
@@ -70,7 +71,6 @@ input {
 .result-item-header h2 {
     margin: 0px;                                                /* Remove the default margin above <h2> elements inside each card <div> item. */
     font-size: 1.8em;                                           /* Make the card <div> <h2> header slightly bigger. (Multiply standard em (16px) by 1.8). */
-    padding-top: 24px;                                          /* Use padding to create space above the <h2> element. */
     padding-bottom: 32px;                                       /* Use padding to create space below the <h2> element. */
     text-align: center;                                         /* Align the <h2> header of the card horizontally (left to right) on the page. */
 }
