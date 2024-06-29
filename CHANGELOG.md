@@ -9,16 +9,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add versions of project at various stages to aid with teaching.
+- Spanish version of the project lessons
 
-## [1.1.3] - 2024-06-23
+## [1.2.0] - 2024-06-29 - Multi-Language Search Lessons
+Divided into project lessons
+
+### Changed
+
+- Divided project into lessons to aid with teaching.
+
+## [1.1.3] - 2024-06-23 - Multi-Language Search
+Updated ids and background color
 
 ### Updated
 
 - Bible Id
 - Background color is now: `#f0f0f0`
 
-## [1.1.2] - 2024-06-19
+## [1.1.2] - 2024-06-19 - Multi-Language Search
+Added loading icon and new mockups
 
 ### Added
 
@@ -37,7 +46,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Using complete sentences in comments for clarity, and to help with language conversion.
 - `README.md` added link to spinner svg download.
 
-## [1.1.1] - 2024-06-13
+## [1.1.1] - 2024-06-13 - Multi-Language Search
+Updated UI
 
 ### Updated
 
@@ -53,7 +63,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `styles.css` using `scrollbar-gutter` to prevent movement when scrollbar appears.
 
-## [1.1.0] - 2024-06-12
+## [1.1.0] - 2024-06-12 - Multi-Language Search
+Initial multi-language version
 
 ### Added
 
@@ -79,7 +90,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `index.html` added some missing forward slashes to end tags.
 
-## [1.0.0] - 2024-06-10
+## [1.0.0] - 2024-06-10 - Single-Language Search
+Updated UI
 
 ### Added
 
@@ -97,7 +109,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Set URL query parameter limit to 5 query results.
   - Adjusted HTML output `<div>` to include `class` attribute for styling.
 
-## [0.0.1] - 2024-05-29
+## [0.0.1] - 2024-05-29 - Single-Language Search (Proof of Concept)
+Initial proof of concept version
 
 ### Added
 
