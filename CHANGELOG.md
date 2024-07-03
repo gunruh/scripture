@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.2.1] - 2024-06-29 - Multi-Language Search Lessons
 
+Added img/ directories
+
 ### Added
 
 - `img/` directory with sample images to use with project.
