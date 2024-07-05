@@ -36,6 +36,8 @@ const apiKey = "xxx"; // Replace "xxx" with API Key
 - [freecodecamp.org - (English) Learn HTML and CSS in Spanish – Course for Beginners](https://www.freecodecamp.org/news/learn-html-and-css-in-spanish-course-for-beginners/)
 - [freecodecamp.org - (Español) Aprende HTML y CSS - Curso Desde Cero](https://www.freecodecamp.org/espanol/news/aprende-html-y-css-curso-desde-cero/)
 - [freecodecamp.org - How to call an API in JavaScript](https://www.freecodecamp.org/news/make-api-calls-in-javascript/)
+- [freecodecamp.org - (English) JavaScript Fetch API For Beginners – Explained With Code Examples](https://www.freecodecamp.org/news/javascript-fetch-api-for-beginners/)
+- [freecodecamp.org - (Español) JavaScript Fetch API para principiantes: Explicado con ejemplos de código](https://www.freecodecamp.org/espanol/news/javascript-fetch-api-para-principiantes)
 
 ### References for HTML, CSS, and JavaScript
 
