@@ -1,13 +1,13 @@
-const apiKey = "xxx"; // Replace "xxx" with API Key.
+const apiKey = "xxx"; // Reemplace "xxx" con la clave API.
 
-const bibleIdEnglish = "9879dbb7cfe39e4d-04"; // Bible Id for "World English Bible"
+const bibleIdSpanish = "592420522e16049f-01"; // ID de la Biblia para "Reina Valera 1909"
 
-// \\\\\\\\\\ Edit Here ////////// - Task: Add 2 additional Bible Ids
-const bibleIdKiche = "a77409f7cf5be995-01"; // Bible Id for "Nuevo Testamento K'iche' of Totonicapan"
-const bibleIdSpanish = "592420522e16049f-01"; // Bible Id for "Biblia Reina Valera 1909"
-// ////////// Edit Here \\\\\\\\\\
+// \\\\\\\\\\ Editar aquí ////////// - Tarea: agregar 2 identificaciones bíblicas adicionales
+const bibleIdEnglish = "9879dbb7cfe39e4d-04"; // ID de la Biblia para "World English Bible"
+const bibleIdKiche = "a77409f7cf5be995-01"; // ID de la Biblia para "Nuevo Testamento K'iche' of Totonicapan"
+// ////////// Editar aquí \\\\\\\\\\
 
-// Create "RequestOptions" to send on each HTTP request.
+// Crea "RequestOptions" para enviar en cada solicitud HTTP.
 const requestOptions = {
   method: "GET",
   headers: {
@@ -15,150 +15,150 @@ const requestOptions = {
   },
 };
 
-// This function searches the Bible API using the keyword from the given <input> element.
-// Then it puts the search results into the given result <div> element.
+// Esta función busca en la API de la Biblia usando la palabra clave del elemento <input> dado.
+// Luego coloca los resultados de la búsqueda en el elemento <div> del resultado dado.
 async function searchBible(searchInputId, resultDivId) {
   
-  // Get the HTML elements.
-  let searchInput = document.getElementById(searchInputId); // Get the <input> element.
-  let resultDiv = document.getElementById(resultDivId); // Get the result <div> element.
+  // Obtener los elementos HTML.
+  let searchInput = document.getElementById(searchInputId); // Obtiene el elemento <input>.
+  let resultDiv = document.getElementById(resultDivId); // Obtiene el resultado del elemento <div>.
 
-  // Set up the header text for each card <div>.
+  // Configura el texto del encabezado para cada tarjeta <div>.
 
-  // \\\\\\\\\\ Edit Here ////////// - Task: Create 'leftCardHTML' here
+  // \\\\\\\\\\ Editar aquí ////////// - Tarea: Crear 'leftCardHTML' aquí
   let leftCardHTML = `
   <div class="result-item-header">
     <h2>K'iche'</h2>
   </div>`;
-  // ////////// Edit Here \\\\\\\\\\
+  // ////////// Editar aquí \\\\\\\\\\
 
+  // Nota: El carácter ñ en "Español" se representa como "&ntilde;" en HTML.
   let mainCardHTML = `
   <div class="result-item-header">
-    <h2>English</h2>
+    <h2>Espa&ntilde;ol</h2>
   </div>`;
 
-  // \\\\\\\\\\ Edit Here ////////// - Task: Create 'rightCardHTML' here
-  // Note: The ñ character in "Español" is represented as "&ntilde;" in HTML.
+  // \\\\\\\\\\ Editar aquí ////////// - Tarea: Crear 'rightCardHTML' aquí
   let rightCardHTML = `
   <div class="result-item-header">
-    <h2>Espa&ntilde;ol</h2> 
+    <h2>Inglés</h2>
   </div>`;
-  // ////////// Edit Here \\\\\\\\\\
+  // ////////// Editar aquí \\\\\\\\\\
 
-  // Create a search Bible URL object.
+  // Crea un objeto URL de búsqueda de la Biblia.
   let searchUrl = new URL(
-    `https://api.scripture.api.bible/v1/bibles/${bibleIdEnglish}/search`
+    `https://api.scripture.api.bible/v1/bibles/${bibleIdSpanish}/search`
   );
 
-  // Add query parameters to the URL.
+  // Agrega parámetros de consulta a la URL.
   searchUrl.searchParams.append("query", searchInput.value);
-  searchUrl.searchParams.append("range", "MAT-REV"); // Only search New Testament, Matthew (MAT) - Revelation (REV).
+  searchUrl.searchParams.append("range", "MAT-REV"); // Solo busca Nuevo Testamento, Mateo (MAT) - Apocalipsis (REV).
 
-  // \\\\\\\\\\ Edit Here ////////// - Task: Add another URL search parameter to "limit" search results to only 5.
+  // \\\\\\\\\\ Editar aquí ////////// - Tarea: agregue otro parámetro de búsqueda de URL para "limitar" los resultados de búsqueda a solo 5.
   searchUrl.searchParams.append("limit", 5);
-  // ////////// Edit Here \\\\\\\\\\
+  // ////////// Editar aquí \\\\\\\\\\
 
-  // Output the created URL to the Developer Tools console logs.
+  // Envía la URL creada a los registros de la consola de herramientas de desarrollo.
   console.log("Bible Search URL: ", searchUrl);
 
-  // Start the loading-icon.
+  // Inicia el icono de carga.
   resultDiv.innerHTML = `<img class="loading-icon" src="icons/spinner-solid.svg"></img>`;
 
-  // Send an HTTP request to the URL to search for verses containing the search words.
+  // Envía una solicitud HTTP a la URL para buscar versículos que contengan las palabras de búsqueda.
   const searchBibleResponseJson = await fetch(searchUrl, requestOptions)
     .then((response) => {
 
-      // If the HTTP response status is not 200 (OK), log the response and throw an error.
+      // Si el estado de la respuesta HTTP no es 200 (OK), registra la respuesta y arroja un error.
       if (!response.ok) {
         console.log("Bible Search response:", response);
         throw new Error("HTTP searchBible - Response was not ok");
       }
 
-      // Return the response body JSON.
+      // Devuelve el cuerpo de la respuesta JSON.
       return response.json();
     })
     .catch((error) => {
-      // Log any caught error to the console.
+      // Registra cualquier error detectado en la consola.
       console.error("An error was caught during Search Bible request:", error);
     });
 
-  // Loop through each verse returned in the search result to get its information.
+  // Recorre cada verso devuelto en el resultado de la búsqueda para obtener su información.
   for (verse of searchBibleResponseJson.data.verses) {
 
-// Task: Add another API call to request the verse from alternate Bible Ids
+// Tarea: agregar otra llamada API para solicitar el versículo desde identificadores bíblicos alternativos
 
 
 
-    // Create a new URL to get this verse from the other Bible IDs.
+    // Crea una nueva URL para obtener este versículo de las otras ID de la Biblia.
     let verseUrl = new URL(
-      `https://api.scripture.api.bible/v1/bibles/${bibleIdSpanish}/verses/${verse.id}`
+      `https://api.scripture.api.bible/v1/bibles/${bibleIdEnglish}/verses/${verse.id}`
     );
 
-    // Add query parameters to the verse URL.
+    // Agregue parámetros de consulta a la URL del verso.
     verseUrl.searchParams.append("include-titles", false);
     verseUrl.searchParams.append("include-verse-numbers", false);
     
-    // \\\\\\\\\\ Edit Here ////////// - Task: Add another URL query parameter here for the "parallels" bibleId
+    // \\\\\\\\\\ Editar aquí ////////// - Tarea: agregue otro parámetro de consulta de URL aquí para el bibleId "paralelos"
     verseUrl.searchParams.append("parallels", bibleIdKiche);
-    // ////////// Edit Here \\\\\\\\\\
+    // ////////// Editar aquí \\\\\\\\\\
 
-    // Output the created URL to the Developer Tools console logs.
+    // Envía la URL creada a los registros de la consola de herramientas de desarrollo.
     console.log("Get Verse URL: ", verseUrl);
 
-    // Send an HTTP request to get the verse in the additional Bible IDs.
+    // Envíe una solicitud HTTP para obtener el versículo en las ID de la Biblia adicionales.
     const getVerseResponseJson = await fetch(verseUrl, requestOptions)
       .then((response) => {
         
-        // If the response status is not 200 (OK), log the response.
+        // Si el estado de la respuesta no es 200 (OK), registra la respuesta.
         if (!response.ok) {
           console.log("Get Verse response:", response);
           throw new Error("HTTP Get Verse - Response was not ok");
         }
 
-        // Return the response body JSON.
+        // Devuelve el cuerpo de la respuesta JSON.
         return response.json();
       })
       .catch((error) => {
-        // Log any caught error to the console.
+        // Registra cualquier error detectado en la consola.
         console.error("An error was caught during Get Verse request:", error);
       });
 
 
 
-    // Define variables for the K'iche', Spanish, and English verses.
+    // Definir variables para los versos k'iche', español e inglés.
 
-    let verseKiche = getVerseResponseJson.data.parallels[0];     // Task: Uncomment this line
-    let verseEnglish = verse;
-    let verseSpanish = getVerseResponseJson.data;                // Task: Uncomment this line
+    let verseKiche = getVerseResponseJson.data.parallels[0];     // Tarea: descomentar esta línea
+    let verseSpanish = verse;
+    let verseEnglish = getVerseResponseJson.data;                // Tarea: descomentar esta línea
 
-    // Add the information from each verse to the correct card <div>.
+    // Agrega la información de cada verso a la tarjeta <div> correcta.
 
-    // \\\\\\\\\\ Edit Here ////////// - Task: Add the "result-item" <div>s to the leftCardHTML here - remember to use verse.content instead of verse.text!
+    // \\\\\\\\\\ Editar aquí ////////// - Tarea: Agregue los <div> del "elemento de resultado" a leftCardHTML aquí; recuerde usar verse.content en lugar de verse.text.
     leftCardHTML = leftCardHTML.concat(`
       <div class="result-item">
         <div><b>${verseKiche.reference}</b></div>
         <div>${verseKiche.content}</div>
       </div>`);
-    // ////////// Edit Here \\\\\\\\\\
+    // ////////// Editar aquí \\\\\\\\\\
 
     mainCardHTML = mainCardHTML.concat(`
       <div class="result-item">
-        <div><b>${verseEnglish.reference}</b></div>
-        <div>${verseEnglish.text}</div>
+        <div><b>${verseSpanish.reference}</b></div>
+        <div>${verseSpanish.text}</div>
       </div>`);
 
-    // \\\\\\\\\\ Edit Here ////////// - Task: Add the "result-item" <div>s to the rightCardHTML here - remember to use verse.content instead of verse.text!
+    // \\\\\\\\\\ Editar aquí ////////// - Tarea: Agregue los <div> del "elemento de resultado" a la derechaCardHTML aquí; recuerde usar verse.content en lugar de verse.text.
     rightCardHTML = rightCardHTML.concat(`
       <div class="result-item">
-        <div><b>${verseSpanish.reference}</b></div>
-        <div>${verseSpanish.content}</div>
+        <div><b>${verseEnglish.reference}</b></div>
+        <div>${verseEnglish.content}</div>
       </div>`);
-    // ////////// Edit Here \\\\\\\\\\
+    // ////////// Editar aquí \\\\\\\\\\
   }
 
-  // \\\\\\\\\\ Edit Here ////////// - Task: Add the left and right "result-item-card" <divs> to the whole resultDiv.
+  // \\\\\\\\\\ Editar aquí ////////// - Tarea: agregue la "tarjeta de elemento de resultado" <divs> izquierda y derecha a todo el resultDiv.
 
-  // Set the result <div> contents to contain the 3 card <divs>.
+  // Establece el contenido del resultado <div> para que contenga las 3 tarjetas <div>s.
   resultDiv.innerHTML = `
       <div class="result-item-card">
         ${leftCardHTML}
@@ -170,56 +170,56 @@ async function searchBible(searchInputId, resultDivId) {
         ${rightCardHTML}
       </div>`;
 
-  // ////////// Edit Here \\\\\\\\\\
+  // ////////// Editar aquí \\\\\\\\\\
 
 
-  alignResultItems(resultDiv); // Task: Uncomment this line.
+  alignResultItems(resultDiv); // Tarea: descomentar esta línea.
   
 }
 
 function alignResultItems(resultDiv) {
   /*
-    Because verses are different heights in different languages,
-    We can align the verse result-items by giving each verse result-item <div> in a row a matching height.
-    The below code aligns verse result-items across the cards so that they line up from left to right.
+    Debido a que los versos tienen diferentes alturas en diferentes idiomas,
+    Podemos alinear los elementos de resultado del verso dándole a cada elemento de resultado del verso <div> en una fila una altura coincidente.
+    El siguiente código alinea los elementos de resultados del verso en las tarjetas para que se alineen de izquierda a derecha.
     
-    First, find the verse with the largest text height out of the 3.
-    Set each of the 3 verses in that row to have the same height as the largest verse.
-    Repeat this for each row of verses.
+    Primero, encuentre el versículo con la altura de texto más grande de los 3.
+    Configure cada uno de los 3 versos de esa fila para que tengan la misma altura que el verso más grande.
+    Repita esto para cada fila de versos.
   */
 
-  // First, get a list containing each of the card <div>s.
+  // Primero, obtenga una lista que contenga cada una de las tarjetas <div>.
   let cardDivArray = resultDiv.getElementsByClassName("result-item-card");
 
-  // Now Loop the number of verses on the card.
-  // We use the number of verses from the first (0th) card, but they should all be the same.
+  // Ahora repite el número de versos en la tarjeta.
+  // Usamos el número de versos de la primera (0ª) tarjeta, pero todos deben ser iguales.
 
-  // Start the count at 0 to track which verse item row we're on (going from top to bottom).
-  // Continue looping until our count reaches the length of the list of verses (Until it reaches the bottom of the card).
-  // After each loop, increase 'count' by 1 to advance down to the next verse result-item.
+  // Comienza la cuenta en 0 para rastrear en qué fila de versos estamos (de arriba a abajo).
+  // Continúa el bucle hasta que nuestro conteo alcance la longitud de la lista de versos (hasta que llegue al final de la tarjeta).
+  // Después de cada bucle, aumenta 'count' en 1 para avanzar al siguiente elemento de resultado del verso.
   for ( var count = 0; count < cardDivArray[0].getElementsByClassName("result-item").length; count++ ) {
     
-    // Create array variables (lists).
-    let itemDivRow = []; // A list for each <div> result-item in a row (left to right).
-    let itemDivHeights = []; // A list for the heights of each result-item <div> in a row (left to right).
+    // Crea variables de matriz (listas).
+    let itemDivRow = []; // Una lista para cada elemento de resultado <div> en una fila (de izquierda a derecha).
+    let itemDivHeights = []; // Una lista de las alturas de cada elemento de resultado <div> en una fila (de izquierda a derecha).
 
-    // Loop through the list of card <div>s.
+    // Recorre la lista de tarjetas <div>s.
     for (cardDiv of cardDivArray) {
 
-      // Get the <div> of the result-item that we want to add to our list.
+      // Obtiene el <div> del elemento resultante que queremos agregar a nuestra lista.
       let itemDiv = cardDiv.getElementsByClassName("result-item")[count];
       
-      itemDivRow.push(itemDiv); // Add the <div> to a list.
-      itemDivHeights.push(itemDiv.clientHeight); // Add the <div>'s height to a separate list.
+      itemDivRow.push(itemDiv); // Agrega el <div> a una lista.
+      itemDivHeights.push(itemDiv.clientHeight); // Agrega la altura del <div> a una lista separada.
     }
 
-    // Find the maximum height in the list of <div> heights.
+    // Encuentra la altura máxima en la lista de alturas <div>.
     let maxHeight = Math.max(...itemDivHeights);
 
-    // Loop through each <div> in the list and set its height to the maximum height that we found.
+    // Recorre cada <div> de la lista y establece su altura en la altura máxima que encontramos.
     for (itemDiv of itemDivRow) {
       itemDiv.setAttribute("style", `height: ${maxHeight}px`);
-      itemDiv.style.height = `${maxHeight}px`; // Set an alternate setting for cross-browser compatibility.
+      itemDiv.style.height = `${maxHeight}px`; // Establece una configuración alternativa para la compatibilidad entre navegadores.
     }
   }
 }
