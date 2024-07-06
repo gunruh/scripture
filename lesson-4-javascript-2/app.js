@@ -4,6 +4,7 @@ const bibleIdEnglish = "9879dbb7cfe39e4d-04"; // Bible Id for "World English Bib
 
 // \\\\\\\\\\ Edit Here ////////// - Task: Add 2 additional Bible Ids
 
+
 // ////////// Edit Here \\\\\\\\\\
 
 // Create "RequestOptions" to send on each HTTP request.
@@ -26,6 +27,9 @@ async function searchBible(searchInputId, resultDivId) {
 
   // \\\\\\\\\\ Edit Here ////////// - Task: Create 'leftCardHTML' here
 
+
+
+
   // ////////// Edit Here \\\\\\\\\\
 
   let mainCardHTML = `
@@ -34,6 +38,10 @@ async function searchBible(searchInputId, resultDivId) {
   </div>`;
 
   // \\\\\\\\\\ Edit Here ////////// - Task: Create 'rightCardHTML' here
+
+
+
+
 
   // ////////// Edit Here \\\\\\\\\\
 
@@ -127,6 +135,10 @@ async function searchBible(searchInputId, resultDivId) {
 
     // \\\\\\\\\\ Edit Here ////////// - Task: Add the "result-item" <div>s to the leftCardHTML here - remember to use verse.content instead of verse.text!
 
+
+
+
+
     // ////////// Edit Here \\\\\\\\\\
 
       mainCardHTML = mainCardHTML.concat(`
@@ -136,7 +148,11 @@ async function searchBible(searchInputId, resultDivId) {
       </div>`);
 
     // \\\\\\\\\\ Edit Here ////////// - Task: Add the "result-item" <div>s to the rightCardHTML here - remember to use verse.content instead of verse.text!
-  
+
+
+
+
+
     // ////////// Edit Here \\\\\\\\\\
   }
 
@@ -147,6 +163,12 @@ async function searchBible(searchInputId, resultDivId) {
       <div class="result-item-card">
         ${mainCardHTML}
       </div>`;
+
+
+
+
+
+
 
   // ////////// Edit Here \\\\\\\\\\
 
