@@ -170,6 +170,7 @@ async function searchBible(searchInputId, resultDivId) {
 
 
 
+
   // ////////// Editar aquí \\\\\\\\\\
 
 

@@ -89,6 +89,7 @@ async function searchBible(searchInputId, resultDivId) {
 
 
 
+
     // Crea una nueva URL para obtener este versículo de las otras ID de la Biblia.
     let verseUrl = new URL(
       `https://api.scripture.api.bible/v1/bibles/${bibleIdEnglish}/verses/${verse.id}`
