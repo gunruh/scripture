@@ -10,7 +10,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Offline lesson versions in case network is unavailable
-- Spanish version of the project lessons
+
+## [1.2.3] - 2024-07-06 - Multi-Language Search Lessons
+
+### Changed
+
+- Switched to Spanish version of the project lessons
+
+### Added
+
+- Resources directory
 
 ## [1.2.2] - 2024-07-06 - Multi-Language Search Lessons
 
