@@ -1,110 +1,110 @@
-@keyframes spin {                                               /* Define the "spin" animation used by the loading-icon. */
-    0% { transform: rotate(0deg); }                             /* Start with 0 degrees of rotation. */
-    100% { transform: rotate(360deg); }                         /* End with 360 degress of rotation. */
+@keyframes spin {                                               /* Defina la animación de "spin" utilizada por el ícono de carga. */
+    0% { transform: rotate(0deg); }                             /* Comienza con 0 grados de rotación. */
+    100% { transform: rotate(360deg); }                         /* Finaliza con 360 grados de rotación. */
 }
 
 html {
-    scrollbar-gutter: stable both-edges;                        /* Add space for the scrollbar so that it doesn't change the page width if it appears. */
+    scrollbar-gutter: stable both-edges;                        /* Agrega espacio para la barra de desplazamiento para que no cambie el ancho de la página si aparece. */
 }
 
 body {
-    background-color: #f0f0f0;                                /* Set the background color for the page. */
-    font-family: Arial, Helvetica, sans-serif;                  /* "Arial" font will be used. If unavailable, "Helvetica" will be used. If unavailable, a "sans-serif" font will be picked. */
-    margin: 0px;                                                /* Set all margins to 0px. (This removes the default margin.) */
+    background-color: #f0f0f0;                                /* Establece el color de fondo de la página. */
+    font-family: Arial, Helvetica, sans-serif;                  /* Se utilizará la fuente "Arial". Si no está disponible, se utilizará "Helvetica". Si no está disponible, se elegirá una fuente "sans-serif". */
+    margin: 0px;                                                /* Establece todos los márgenes en 0px. (Esto elimina el margen predeterminado). */
 }
 
 body h1 {
-    color: black;                                             /* Set the text color. */
-    font-size: 96px;                                            /* Set the font size of <h1> Header. */
-    text-align: center;                                         /* Align the <h1> in the center of the page horizontally. */
-    margin-top: 160px;                                          /* Set a 160px top margin above the <h1>. */
-    margin-bottom: 32px;                                        /* Set a 32px bottom margin below below <h1>. */
+    color: black;                                             /* Establece el color del texto <h1>. */
+    font-size: 96px;                                            /* Establece el tamaño de fuente del encabezado <h1>. */
+    text-align: center;                                         /* Alinea el <h1> en el centro de la página horizontalmente. */
+    margin-top: 160px;                                          /* Establece un margen superior de 160 px sobre <h1>. */
+    margin-bottom: 32px;                                        /* Establece un margen inferior de 32px debajo de <h1>. */
 }
 
 search {
-    width: 352px;                                               /* Set the <search> width to 352px. */
-    margin: auto;                                               /* This centers the <search> element horizontally on the page. */
+    width: 352px;                                               /* Establece el ancho de <search> en 352 px. */
+    margin: auto;                                               /* Esto centra el elemento <search> horizontalmente en la página. */
 }
 
 input {
-    /* Search Input */
-    background-color: white;                                  /* Set the background color of the <input>. */
-    height: 48px;                                               /* Set the height of the <input>. */
-    font-size: 1.2em;                                           /* Set the font size of the <input>. */
+    /* Entrada de Búsqueda */
+    background-color: white;                                  /* Establece el color de fondo de la <input>. */
+    height: 48px;                                               /* Establece la altura de la <input>. */
+    font-size: 1.2em;                                           /* Establece el tamaño de fuente de la <input>. */
 
-    /* \\\\\\\\\\ Edit Here ////////// - Task: Add a border radius to the search input. */
-    border-radius: 24px;                                        /* Create rounded corners for the <input>. */
-    /* ////////// Edit Here \\\\\\\\\\ */
+    /* \\\\\\\\\\ Editar aquí ////////// - Tarea: agregar un radio de borde a la entrada de búsqueda. */
+    border-radius: 24px;                                        /* Crea esquinas redondeadas para la <input>. */
+    /* ////////// Editar aquí \\\\\\\\\\ */
 
-    outline: none;                                              /* Turn off the outline when the <input> is clicked. */
-    border: none;                                               /* Turn off the border line on the <input>. */
-    padding-left: 56px;                                         /* Move the text inside the <input> past the right of the magnifying glass. (16px of padding + 24px icon width + 16px spacing = 56px) */
-    width: 296px;                                               /* Set the width of text input area. (352px total width - 56px left-padding = 296px) */
+    outline: none;                                              /* Desactiva el contorno cuando se hace clic en <input>. */
+    border: none;                                               /* Desactiva la línea de borde en <input>. */
+    padding-left: 56px;                                         /* Mueve el texto dentro de <input> más allá de la derecha de la lupa. (16px de relleno + 24px de ancho del icono + espaciado de 16px = 56px) */
+    width: 296px;                                               /* Establece el ancho del área de entrada de texto. (352 px de ancho total - 56 px de relleno izquierdo = 296 px) */
 
-    /* \\\\\\\\\\ Edit Here ////////// - Task: Add a shadow to the search input. The pattern is "h-offset" "v-offset" "blur" "color" */
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);              /* Create a shadow around the element. Adjusted 0px horizontally (left to right), 2px veritically (top to bottom), 8px blur, 25% opacity. */
-    /* ////////// Edit Here \\\\\\\\\\ */
+    /* \\\\\\\\\\ Editar aquí ////////// - Tarea: agregar una sombra a la entrada de búsqueda. El patrón es "desplazamiento h" "desplazamiento v" "desenfoque" "color" */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);              /* Crea una sombra alrededor del elemento. Ajustado 0px horizontalmente (de izquierda a derecha), 2px verticalmente (de arriba a abajo), desenfoque de 4px, 25% de opacidad.*/
+    /* ////////// Editar aquí \\\\\\\\\\ */
 
-    /* Magnifying Glass Icon. */
-    /* \\\\\\\\\\ Edit Here ////////// - Task: Add the magnifying-glass-solid.svg file path. */
-    background-image: url('icons/magnifying-glass-solid.svg');  /* This is the magnifying-glass-solid.svg image to use. */
-    /* ////////// Edit Here \\\\\\\\\\ */
-    background-size: 24px;                                      /* Set the size of the icon to 24px. */
-    background-repeat: no-repeat;                               /* The icon should not repeat. */
-    background-position: 16px 12px;                             /* This adjusts the position of the icon. 16px horizontally (left to right). 12px vertically (top to bottom). */
+    /* Icono de lupa */
+    /* \\\\\\\\\\ Editar aquí ////////// - Tarea: Agregar la ruta del archivo magnifying-glass-solid.svg. */
+    background-image: url('icons/magnifying-glass-solid.svg');  /* Esta es la imagen "magnifying-glass-solid.svg" que se utilizará. */
+    /* ////////// Editar aquí \\\\\\\\\\ */
+    background-size: 24px;                                      /* Establece el tamaño del icono en 24px. */
+    background-repeat: no-repeat;                               /* El icono no debería repetirse. */
+    background-position: 16px 12px;                             /* Esto ajusta la posición del icono. 16px horizontalmente (de izquierda a derecha). 12px verticalmente (de arriba a abajo). */
 }
 
 #resultDiv {
-    margin-top: 32px;                                           /* Set a 32px top margin above the result <div> area. */
-    margin-bottom: 32px;                                        /* Set a 32px bottom margin below the result <div> area. */
-    width: 100%;                                                /* The result <div> width should fill the width of the page completely (100%). */
-    display: flex;                                              /* Set this <div> as a "flexbox" container, so that its contents can be aligned. */
-    justify-content: center;                                    /* Center the 3 card divs horizontally inside the result <div>. */
+    margin-top: 32px;                                           /* Establece un margen superior de 32 píxeles sobre el área <div> del resultado. */
+    margin-bottom: 32px;                                        /* Establece un margen inferior de 32 píxeles debajo del área <div> del resultado. */
+    width: 100%;                                                /* El resultado <div> ancho debe llenar completamente el ancho de la página (100%). */
+    display: flex;                                              /* Establece este <div> como un contenedor "flexbox", para que su contenido pueda alinearse. */
+    justify-content: center;                                    /* Centrar las 3 tarjetas div horizontalmente dentro del resultado <div>. */
 }
 
 .result-item-card {
-    padding-top: 16px;                                          /* Use padding to create space at the top of the card. */
-    vertical-align: top;                                        /* Make the cards align to the top of their parent <div>. */
+    padding-top: 16px;                                          /* Utilice relleno para crear espacio en la parte superior de la tarjeta. */
+    vertical-align: top;                                        /* Hacer que las tarjetas se alineen con la parte superior de su padre <div>. */
 
-    /* \\\\\\\\\\ Edit Here ////////// - Task (Lesson 4): Control the width of each card. 736px for single card, 352px for 3 cards. */
-    width: 352px;                                               /* Set the width of each card <div>. */
-    /* ////////// Edit Here \\\\\\\\\\ */
+    /* \\\\\\\\\\ Editar aquí ////////// - Tarea (Lección 4): Controlar el ancho de cada tarjeta. 736 px para una sola tarjeta, 352 px para 3 tarjetas. */
+    width: 352px;                                               /* Establece el ancho de cada tarjeta <div> */
+    /* ////////// Editar aquí \\\\\\\\\\ */
 
-    margin-left: 16px;                                          /* Set a 16px left margin (spacing) for each card <div>. */
-    margin-right: 16px;                                         /* Set a 16px right margin (spacing) for each card <div>. */
-    display: flex;                                              /* Set each each card <div> as a "flexbox" container, so that its contents can be aligned. */
-    flex-direction: column;                                     /* Align card contents vertically, in a column. */
-    justify-content: space-between;                             /* Distribute card items evenly on the vertical axis */
+    margin-left: 16px;                                          /* Establece un margen izquierdo (espaciado) de 16 píxeles para cada tarjeta <div>. */
+    margin-right: 16px;                                         /* Establece un margen derecho (espaciado) de 16 píxeles para cada tarjeta <div>. */
+    display: flex;                                              /* Establece cada tarjeta <div> como un contenedor "flexbox", para que su contenido pueda alinearse. */
+    flex-direction: column;                                     /* Alinear el contenido de la tarjeta verticalmente, en una columna. */
+    justify-content: space-between;                             /* Distribuir los elementos de la tarjeta uniformemente en el eje vertical. */
 
-    background-color: white;                                  /* Set the background color. */
-    color: black;                                             /* Set the text color. */
-    border-radius: 24px;                                        /* Set the border radius for each card, to create rounded corners. (This matches the search <input>.) */
-    /* \\\\\\\\\\ Edit Here ////////// - Task: Add a shadow to the search input. The pattern is "h-offset" "v-offset" "blur" "color" */
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);              /* Create a shadow around the element. Adjusted 0px horizontally (left to right), 2px veritically (top to bottom), 8px blur, 25% opacity. */
-    /* ////////// Edit Here \\\\\\\\\\ */
+    background-color: white;                                  /* Establece el color de fondo */
+    color: black;                                             /* Establece el color del texto */
+    border-radius: 24px;                                        /* Establece el radio del borde de cada tarjeta para crear esquinas redondeadas. (Esto coincide con la búsqueda <input>.) */
+    /* \\\\\\\\\\ Editar aquí ////////// - Tarea: agregar una sombra a la entrada de búsqueda. El patrón es "desplazamiento h" "desplazamiento v" "desenfoque" "color" */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);              /* Crea una sombra alrededor de cada tarjeta <div>. Ajustado 0px horizontalmente (de izquierda a derecha), 2px verticalmente (de arriba a abajo), desenfoque de 4px, 25% de opacidad. */
+    /* ////////// Editar aquí \\\\\\\\\\ */
 }
 
 .result-item-header h2 {
-    margin: 0px;                                                /* Remove the default margin above <h2> elements inside each card <div> item. */
-    font-size: 1.8em;                                           /* Make the card <div> <h2> header slightly bigger. (Multiply standard em (16px) by 1.8). */
-    color: black;                                             /* Set the text color. */
-    padding-bottom: 32px;                                       /* Use padding to create space below the <h2> element. */
-    text-align: center;                                         /* Align the <h2> header of the card horizontally (left to right) on the page. */
+    margin: 0px;                                                /* Elimina el margen predeterminado sobre los elementos <h2> dentro de cada elemento <div> de la tarjeta. */
+    font-size: 1.8em;                                           /* Haz el encabezado de la tarjeta <div> <h2> un poco más grande. (Multiplica em estándar (16px) por 1.8). */
+    color: black;                                             /* Establecer el color del texto */
+    padding-bottom: 32px;                                       /* Usa relleno para crear espacio debajo del elemento <h2>. */
+    text-align: center;                                         /* Alinea el encabezado <h2> de la tarjeta horizontalmente (de izquierda a derecha) en la página. */
 }
 
 .result-item {
-    color: black;                                             /* Set the text color. */
-    margin-top: 0px;                                            /* Set 0px padding above result-item elements. */
-    margin-right: 24px;                                         /* Set 24px padding to the right of result-item elements. */
-    margin-bottom: 24px;                                        /* Set 24px padding below result-item elements. */
-    margin-left: 24px;                                          /* Set 24px padding to the left of result-item elements. */
+    color: black;                                             /* Establecer el color del texto */
+    margin-top: 0px;                                            /* Establece un relleno de 0px encima de los elementos del elemento de resultado. */
+    margin-right: 24px;                                         /* Establece un relleno de 24 píxeles a la derecha de los elementos del elemento de resultado. */
+    margin-bottom: 24px;                                        /* Establece un relleno de 24 píxeles debajo de los elementos del elemento de resultado. */
+    margin-left: 24px;                                          /* Establece un relleno de 24 píxeles a la izquierda de los elementos del elemento de resultado. */
 }
 
 .loading-icon {
-    animation: spin 2s linear infinite;                         /* Apply the "spin" animation (defined at the top of this file). Duration is 2 seconds. "Lineaer" easing-function. Do the animation an infinite number of times. */
-    margin-top: 64px;                                           /* Add a 64px top margin above the icon so that it appears further down on the page. */
+    animation: spin 2s linear infinite;                         /* Aplicar la animación "spin" (definida en la parte superior de este archivo). La duración es de 2 segundos. Función de relajación "Lineaer". Haz la animación un número infinito de veces. */
+    margin-top: 64px;                                           /* Añade un margen superior de 64px encima del icono para que aparezca más abajo en la página. */
 }
 
 .p {
-    margin: 0px;                                                /* The Bible API puts the verses inside <p class="p"> tags which have default margins, so we remove the default margins for the "p" class. */
+    margin: 0px;                                                /* La API de la Biblia coloca los versículos dentro de etiquetas <p class="p"> que tienen márgenes predeterminados, por lo que eliminamos los márgenes predeterminados para la clase "p". */
 }
