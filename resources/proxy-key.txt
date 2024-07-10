@@ -1,0 +1,8 @@
+prefix: 
+
+"http://proxy.cors.sh/"
+
+key: 
+
+"x-cors-api-key": "temp_a7e2e393ae9dafa7dae7412bb23fadee"
+
