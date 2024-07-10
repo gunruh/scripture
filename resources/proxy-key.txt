@@ -1,6 +1,6 @@
 prefix: 
 
-"http://proxy.cors.sh/"
+"https://proxy.cors.sh/"
 
 key: 
 
